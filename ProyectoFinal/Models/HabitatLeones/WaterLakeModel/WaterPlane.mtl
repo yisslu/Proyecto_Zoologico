@@ -1,0 +1,33 @@
+newmtl FloorPlane:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd cracked_ground_BaseColor.jpg
+bump  -bm 1 cracked_ground_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks cracked_ground_Specular.jpg
+Ns 18.00
+newmtl FloorPlane:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Gravel_BaseColor.jpg
+bump  -bm 1 Gravel_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Gravel_Specular.jpg
+Ns 18.00
+newmtl phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Water_001_COLOR.jpg
+bump  -bm 1 Water_001_NORM.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Water_001_SPEC.jpg
+Ns 18.00

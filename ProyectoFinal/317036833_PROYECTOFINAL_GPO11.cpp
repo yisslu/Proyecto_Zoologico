@@ -73,6 +73,9 @@ GLfloat lastFrame = 0.0f;  	// Time of last frame
 float posXCa = PosIni.x + 65.0f, posYCa = PosIni.y, posZCa = PosIni.z + 25.0f;
 float posXMari = PosIni.x + 95.0f, posYMari = PosIni.y, posZMari = PosIni.z + 25.0f;
 
+float posXLeones = PosIni.x + 20.0f, posYLeones = PosIni.y, posZLeones = PosIni.z + 20.0f;
+float posXPanda = PosIni.x - 20.0f, posYPanda = PosIni.y, posZPanda = PosIni.z - 20.0f;
+
 #define MAX_FRAMES 9
 int i_max_steps = 190;
 int i_curr_steps = 0;
@@ -229,10 +232,23 @@ int main()
 	Model rocas((char*)"Models/Capibaras/RocasAmbiente/rocas.obj");
 	Model tina((char*)"Models/Capibaras/tina/Tina.obj");
 	Model aguaTina((char*)"Models/Capibaras/tina/Agua.obj");
+	
+	//Lion habitat model declarations
+	Model lionFloor((char*)"Models/HabitatLeones/FloorModel/FloorPlane.obj");
+	Model lionRocks((char*)"Models/HabitatLeones/RockCollection/Rocks.obj");
+	Model lionWater((char*)"Models/HabitatLeones/WaterLakeModel/WaterPlane.obj");
+
+	//Panda habitat model declaration
+	Model pandaFloor((char*)"Models/HabitatPanda/GrassPlane/GrassPlane.obj");
+	Model pandaRocks((char*)"Models/HabitatPanda/Rocks/Rock.obj");
+	Model pandaFence((char*)"Models/HabitatPanda/FenceModel/FenceModel.obj");
+	Model pandaChineseBuilding((char*)"Models/HabitatPanda/ChineseBuilding/ChineseBuilding.obj");
+	Model pandaBambuPlant((char*)"Models/HabitatPanda/BambuPlant/BambuPlant.obj");
+	
 
 	// Build and compile our shader program
 
-	//Inicialización de KeyFrames
+	//Inicializaciï¿½n de KeyFrames
 
 	/*for (int i = 0; i < MAX_FRAMES; i++)
 	{
@@ -555,10 +571,12 @@ int main()
 
 		//Carga de modelo 
 
+		view = camera.GetViewMatrix();
 		//Habitat de capibaras
 		glm::mat4 model(1);
 		//model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
 		model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
+		model = glm::translate(model,glm::vec3(posX,posY,posZ));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		casaCapi.Draw(lightingShader);
@@ -582,6 +600,12 @@ int main()
 		banca.Draw(lightingShader);
 		
 		//Banca1
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posX, posY, posZ));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		banca.Draw(lightingShader);
+
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
 		model = glm::translate(model, glm::vec3(0.2f, 0.0f, 0.2f));
@@ -668,10 +692,37 @@ int main()
 		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
 		//alaDer.Draw(lightingShader);
+		alas.Draw(lightingShader);*/
+
+		//Lion Habitat Load
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXLeones, posYLeones, posZLeones));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		lionRocks.Draw(lightingShader);
+		lionFloor.Draw(lightingShader);
+
+		//Panda habitat Load
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXPanda, posYPanda, posZPanda));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		pandaFloor.Draw(lightingShader);
+		pandaFence.Draw(lightingShader);
+		pandaChineseBuilding.Draw(lightingShader);
+		pandaRocks.Draw(lightingShader);
 
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
+		
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXLeones, posYLeones + 0.01f, posZLeones));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.9f);
+		lionWater.Draw(lightingShader);
+		
 		//Cristales del domo
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
@@ -712,6 +763,29 @@ int main()
 		aguaTina.Draw(lightingShader);
 
 		glDisable(GL_BLEND);
+
+		//Load transparency models for panda habitat
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXPanda, posYPanda, posZPanda));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
+		pandaBambuPlant.Draw(lightingShader);
+		model = glm::translate(model, glm::vec3(1.0f, 0.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		pandaBambuPlant.Draw(lightingShader);
+		model = glm::translate(model, glm::vec3(1.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		pandaBambuPlant.Draw(lightingShader);
+		model = glm::translate(model, glm::vec3(12.0f, 0.0f, -14.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		pandaBambuPlant.Draw(lightingShader);
+		model = glm::translate(model, glm::vec3(1.0f, 0.0f, -1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		pandaBambuPlant.Draw(lightingShader);
+		model = glm::translate(model, glm::vec3(-2.0f, 0.0f, -1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		pandaBambuPlant.Draw(lightingShader);
+
 		glEnable(GL_DEPTH_TEST);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
 		glBindVertexArray(0);
