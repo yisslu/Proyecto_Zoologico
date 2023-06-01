@@ -1,0 +1,252 @@
+newmtl Rock_9:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Rock_9_Base_Color.jpg
+bump  -bm 1 Rock_9_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Rock_9_Specular.jpg
+Ns 18.00
+newmtl Rock_10:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Rock_9_Base_Color.jpg
+bump  -bm 1 Rock_9_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Rock_9_Specular.jpg
+Ns 18.00
+newmtl Rock_11:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Rock_9_Base_Color.jpg
+bump  -bm 1 Rock_9_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Rock_9_Specular.jpg
+Ns 18.00
+newmtl Rock_12:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Rock_9_Base_Color.jpg
+bump  -bm 1 Rock_9_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Rock_9_Specular.jpg
+Ns 18.00
+newmtl Rock_13:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Rock_9_Base_Color.jpg
+bump  -bm 1 Rock_9_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Rock_9_Specular.jpg
+Ns 18.00
+newmtl initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl pasted__pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd CavePlatform2_Base_Diffuse.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd CavePlatform2_Base_Diffuse.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl pasted__pasted__phong2SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl pasted__pasted__phong7SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd lamina.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl pasted__pasted__phong7SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd lamina.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl pasted__phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl pasted__phong2SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl pasted__phong2SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl pasted__phong6SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 4k_Capybara_V1_Diffuse.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl pasted__phong7SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd lamina.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl pasted__phong9SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 0.27 0.27 0.27
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd CavePlatform2_Base_Diffuse.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks CavePlatform2_Base_Specular.png
+Ns 18.00
+newmtl phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl phong3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd agua.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl phong4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd StoneWall.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMap.png
+Ns 18.00
+newmtl phong5SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 10-diffuse.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks 12-specular.png
+Ns 18.00
+newmtl phong6SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 4k_Capybara_V1_Diffuse.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl phong7SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd lamina.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl phong8SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Grunge.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl phong9SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 0.27 0.27 0.27
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl phong10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd grass02_emission.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks grass02_specular.png
+Ns 18.00
