@@ -1,11 +1,15 @@
 ﻿  317036833_PROYECTOFINAL_GPO11.cpp
-D:\Yisus\Escritorio\PF_CG\ProyectoFinal\modelAnim.h(104,44): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Yisus\Escritorio\PF_CG\ProyectoFinal\modelAnim.h(519,24): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Yisus\Escritorio\PF_CG\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(416,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Yisus\Escritorio\PF_CG\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(798,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Yisus\Escritorio\PF_CG\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(799,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Yisus\Escritorio\PF_CG\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(803,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Yisus\Escritorio\PF_CG\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(804,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Yisus\Escritorio\PF_CG\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(806,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Yisus\Escritorio\PF_CG\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(807,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-  ProyectoFinal.vcxproj -> D:\Yisus\Escritorio\PF_CG\Debug\ProyectoFinal.exe
+D:\GitRepositories\Proyecto_Zoologico\ProyectoFinal\modelAnim.h(104,44): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\GitRepositories\Proyecto_Zoologico\ProyectoFinal\modelAnim.h(519,24): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\GitRepositories\Proyecto_Zoologico\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(430,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\GitRepositories\Proyecto_Zoologico\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(617,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\GitRepositories\Proyecto_Zoologico\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(625,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\GitRepositories\Proyecto_Zoologico\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(637,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\GitRepositories\Proyecto_Zoologico\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(663,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\GitRepositories\Proyecto_Zoologico\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(860,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\GitRepositories\Proyecto_Zoologico\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(861,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\GitRepositories\Proyecto_Zoologico\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(865,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\GitRepositories\Proyecto_Zoologico\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(866,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\GitRepositories\Proyecto_Zoologico\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(868,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\GitRepositories\Proyecto_Zoologico\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(869,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+  ProyectoFinal.vcxproj -> D:\GitRepositories\Proyecto_Zoologico\Debug\ProyectoFinal.exe
