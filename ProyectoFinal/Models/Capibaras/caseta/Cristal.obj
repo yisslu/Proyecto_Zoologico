@@ -367,7 +367,7 @@ vn -0.999943 -0.000426 0.010682
 vn -0.999943 -0.000429 0.010683
 s 1
 g pasted__pasted__pPlane2 pasted__group26 group27
-usemtl pasted__phong9SG
+usemtl phong9SG
 f 1/1/1 2/2/2 13/13/3 12/12/4
 f 2/2/2 3/3/5 14/14/6 13/13/3
 f 3/3/5 4/4/7 15/15/8 14/14/6

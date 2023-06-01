@@ -1,18 +1,13 @@
 ﻿  317036833_PROYECTOFINAL_GPO11.cpp
 D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\modelAnim.h(104,44): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
 D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\modelAnim.h(519,24): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(463,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(915,23): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(920,25): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1017,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1018,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1022,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1023,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1025,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1026,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
-soil2-debug.lib(etc1_utils.obj) : warning LNK4099: no se encontró PDB '' con 'soil2-debug.lib(etc1_utils.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-soil2-debug.lib(image_DXT.obj) : warning LNK4099: no se encontró PDB '' con 'soil2-debug.lib(image_DXT.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-soil2-debug.lib(image_helper.obj) : warning LNK4099: no se encontró PDB '' con 'soil2-debug.lib(image_helper.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-soil2-debug.lib(SOIL2.obj) : warning LNK4099: no se encontró PDB '' con 'soil2-debug.lib(SOIL2.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(441,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(878,23): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(883,25): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(951,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(952,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(956,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(957,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(959,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Yisus\Escritorio\PF_CG_T\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(960,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
   ProyectoFinal.vcxproj -> D:\Yisus\Escritorio\PF_CG_T\Debug\ProyectoFinal.exe

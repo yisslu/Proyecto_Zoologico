@@ -31,11 +31,7 @@
 void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode);
 void MouseCallback(GLFWwindow *window, double xPos, double yPos);
 void DoMovement();
-//void animacion();
-void keyframePersona();
 void animacionMariposa();
-void animacionPuerta();
-void animacionRehilete();
 
 // Window dimensions
 const GLuint WIDTH = 800, HEIGHT = 600;
@@ -53,15 +49,11 @@ float movCamera = 0.0f;
 int raiz = 1;
 float rot1 = 0.0f;
 float rot2 = 0.0f;
-float rotPuerta = 0.0f;
-float rotRehilete = 0.0f;
 float movKitX = 0.0f;
 float movKitZ = 1.0f;
 float rotMariposa = -90.0;
 bool anim = false;
 bool anim2 = false;
-bool animPuerta = false;
-bool animRehilete = false;
 bool direccion = true;
 bool recorridoMariposa = false;
 
@@ -78,7 +70,8 @@ GLfloat deltaTime = 0.0f;	// Time between current frame and last frame
 GLfloat lastFrame = 0.0f;  	// Time of last frame
 
 // Keyframes
-float posX =PosIni.x, posY = PosIni.y, posZ = PosIni.z, rotBicep = 0, rotAntebrazo = 0, rotMano = 0;
+float posXCa = PosIni.x + 65.0f, posYCa = PosIni.y, posZCa = PosIni.z + 25.0f;
+float posXMari = PosIni.x + 95.0f, posYMari = PosIni.y, posZMari = PosIni.z + 25.0f;
 
 #define MAX_FRAMES 9
 int i_max_steps = 190;
@@ -92,13 +85,6 @@ typedef struct _frame
 	float incX;		//Variable para IncrementoX
 	float incY;		//Variable para IncrementoY
 	float incZ;		//Variable para IncrementoZ
-	float rotBicep;
-	float rotAntebrazo;
-	float rotMano;
-	float rotIncBicep;
-	float rotIncAnte;
-	float rotIncMano;
-
 }FRAME;
 
 FRAME KeyFrame[MAX_FRAMES];
@@ -108,8 +94,8 @@ int playIndex = 0;
 
 // Positions of the point lights
 glm::vec3 pointLightPositions[] = {
-	glm::vec3(posX-4.8,posY+4,posZ+0.65),
-	glm::vec3(posX+4.8,posY+4,posZ+0.65),
+	//glm::vec3(posX-4.8,posY+4,posZ+0.65),
+	//glm::vec3(posX+4.8,posY+4,posZ+0.65),
 	glm::vec3(0,0,0),
 	glm::vec3(0,0,0)
 };
@@ -134,36 +120,29 @@ glm::vec3 LightP1;
 //	FrameIndex++;
 //}
 
-float frameX[9] = {-95.0,-95.0,-95.0,-95.0,0,0,0,0,0};
-float frameY[9] = {1,1,1,1,0,0,0,0,0};
-float frameZ[9] = {-45,-45,-45,-45,0,0,0,0,0};
-float rBicep[9] = {0,-63,-63,-63,0,0,0,0,0};
-float rAntebrazo[9] = {0,0,-67,-67,0,0,0,0,0};
-float rMano[9] = {0,0,0,84,0,0,0,0,0};
-
-void resetElements(void)
-{
-	posX = KeyFrame[0].posX;
-	posY = KeyFrame[0].posY;
-	posZ = KeyFrame[0].posZ;
-
-	rotBicep = KeyFrame[0].rotBicep;
-	rotAntebrazo = KeyFrame[0].rotAntebrazo;
-	rotMano = KeyFrame[0].rotMano;
-}
-
-void interpolation(void)
-{
-
-	KeyFrame[playIndex].incX = (KeyFrame[playIndex + 1].posX - KeyFrame[playIndex].posX) / i_max_steps;
-	KeyFrame[playIndex].incY = (KeyFrame[playIndex + 1].posY - KeyFrame[playIndex].posY) / i_max_steps;
-	KeyFrame[playIndex].incZ = (KeyFrame[playIndex + 1].posZ - KeyFrame[playIndex].posZ) / i_max_steps;
-	
-	KeyFrame[playIndex].rotIncBicep = (KeyFrame[playIndex + 1].rotBicep - KeyFrame[playIndex].rotBicep) / i_max_steps;
-	KeyFrame[playIndex].rotIncAnte = (KeyFrame[playIndex + 1].rotAntebrazo - KeyFrame[playIndex].rotAntebrazo) / i_max_steps;
-	KeyFrame[playIndex].rotIncMano = (KeyFrame[playIndex + 1].rotMano - KeyFrame[playIndex].rotMano) / i_max_steps;
-
-}
+//void resetElements(void)
+//{
+//	posX = KeyFrame[0].posX;
+//	posY = KeyFrame[0].posY;
+//	posZ = KeyFrame[0].posZ;
+//
+//	rotBicep = KeyFrame[0].rotBicep;
+//	rotAntebrazo = KeyFrame[0].rotAntebrazo;
+//	rotMano = KeyFrame[0].rotMano;
+//}
+//
+//void interpolation(void)
+//{
+//
+//	KeyFrame[playIndex].incX = (KeyFrame[playIndex + 1].posX - KeyFrame[playIndex].posX) / i_max_steps;
+//	KeyFrame[playIndex].incY = (KeyFrame[playIndex + 1].posY - KeyFrame[playIndex].posY) / i_max_steps;
+//	KeyFrame[playIndex].incZ = (KeyFrame[playIndex + 1].posZ - KeyFrame[playIndex].posZ) / i_max_steps;
+//	
+//	KeyFrame[playIndex].rotIncBicep = (KeyFrame[playIndex + 1].rotBicep - KeyFrame[playIndex].rotBicep) / i_max_steps;
+//	KeyFrame[playIndex].rotIncAnte = (KeyFrame[playIndex + 1].rotAntebrazo - KeyFrame[playIndex].rotAntebrazo) / i_max_steps;
+//	KeyFrame[playIndex].rotIncMano = (KeyFrame[playIndex + 1].rotMano - KeyFrame[playIndex].rotMano) / i_max_steps;
+//
+//}
 
 
 
@@ -235,18 +214,17 @@ int main()
 	Model estructura((char*)"Models/Mariposario/Street_lamp/estructura.obj");
 	Model foco((char*)"Models/Mariposario/Street_lamp/foco.obj");
 	Model banca((char*)"Models/Mariposario/Bank/Bank.obj");
-	Model arbol((char*)"Models/tree/tree_maple.obj");
+	Model arbol((char*)"Models/Mariposario/tree/tree.obj");
 	Model cuerpoMari((char*)"Models/Mariposario/Butterfly/body.obj");
 	Model alaIzq((char*)"Models/Mariposario/Butterfly/wing_left.obj");
 	Model alaDer((char*)"Models/Mariposario/Butterfly/wing_right.obj");
-	Model puerta((char*)"Models/Mariposario/Door/Puerta.obj");
 
 	//Carga de modelos de capibaras
 
 	Model casaCapi((char*)"Models/Capibaras/caseta/CasaDescanso.obj");
 	Model cristalCasa((char*)"Models/Capibaras/caseta/Cristal.obj");
 	Model barda((char*)"Models/Capibaras/habitat/Barda.obj");
-	Model cristalesBarda((char*)"Models/Capibaras/habitat/Barda.obj");
+	Model cristalesBarda((char*)"Models/Capibaras/habitat/Cristales.obj");
 	Model planta((char*)"Models/Capibaras/habitat/plantas.obj");
 	Model rocas((char*)"Models/Capibaras/RocasAmbiente/rocas.obj");
 	Model tina((char*)"Models/Capibaras/tina/Tina.obj");
@@ -256,7 +234,7 @@ int main()
 
 	//Inicialización de KeyFrames
 
-	for (int i = 0; i < MAX_FRAMES; i++)
+	/*for (int i = 0; i < MAX_FRAMES; i++)
 	{
 		KeyFrame[i].posX = frameX[i];
 		KeyFrame[i].posY = frameY[i];
@@ -270,7 +248,7 @@ int main()
 		KeyFrame[i].rotIncBicep = 0;
 		KeyFrame[i].rotIncAnte = 0;
 		KeyFrame[i].rotIncMano = 0;
-	}
+	}*/
 
 
 
@@ -467,11 +445,7 @@ int main()
 		// Check if any events have been activiated (key pressed, mouse moved etc.) and call corresponding response functions
 		glfwPollEvents();
 		DoMovement();
-		//animacion();
-		keyframePersona();
 		animacionMariposa();
-		animacionPuerta();
-		animacionRehilete();
 
 
 		// Clear the colorbuffer
@@ -575,8 +549,6 @@ int main()
 
 		glBindVertexArray(VAO);
 		glm::mat4 tmp = glm::mat4(1.0f); //Temp
-		glm::mat4 tmp2 = glm::mat4(1.0f); //Temp
-		glm::mat4 tmpCapi = glm::mat4(1.0f); //Temp
 
 		view = camera.GetViewMatrix();
 
@@ -585,10 +557,10 @@ int main()
 
 		//Habitat de capibaras
 		glm::mat4 model(1);
-		model = glm::translate(model, glm::vec3(posX, posY, posZ));
-		tmpCapi = model = glm::translate(model, glm::vec3(-10.0f, 0.2f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		//model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		casaCapi.Draw(lightingShader);
 		barda.Draw(lightingShader);
 		rocas.Draw(lightingShader);
@@ -597,43 +569,39 @@ int main()
 		// Mariposario
 		//Piso
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posX, posY, posZ));
+		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		piso.Draw(lightingShader);
 
 		//Estructura del domo
 		model = glm::mat4(1);
-		tmp = model = glm::translate(model, glm::vec3(posX, posY, posZ));
-		tmp = model = glm::translate(model, glm::vec3(5.0f, 0.0f, -5.0f));
-		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		domo.Draw(lightingShader);
 		estructura.Draw(lightingShader);
 		banca.Draw(lightingShader);
-		puerta.Draw(lightingShader);
-
+		
 		//Banca1
 		model = glm::mat4(1);
-		//model = glm::translate(tmp, glm::vec3(posX, posY, posZ));
-		model = glm::translate(tmp, glm::vec3(0.2f, 0.0f, 0.2f));
-		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		model = glm::translate(model, glm::vec3(0.2f, 0.0f, 0.2f));
 		model = glm::rotate(model, glm::radians(-180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		banca.Draw(lightingShader);
 
 		//Arbol 1
 		model = glm::mat4(1);
-		tmp2 = model = glm::translate(tmp, glm::vec3(0.0, 0.0, 0.0));
-		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		//model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
 		arbol.Draw(lightingShader);
 
 		//Arbol 2
 		model = glm::mat4(1);
-		//model = glm::translate(tmp, glm::vec3(posX, posY, posZ));
-		model = glm::translate(tmp2, glm::vec3(3.0f, 0.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		//model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		model = glm::translate(model, glm::vec3(5.3f, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
 		arbol.Draw(lightingShader);
@@ -706,8 +674,7 @@ int main()
 
 		//Cristales del domo
 		model = glm::mat4(1);
-		model = glm::translate(tmp, glm::vec3(0.0, 0.0, 0.0));
-		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
@@ -715,8 +682,7 @@ int main()
 
 		//Foco de la lampara
 		model = glm::mat4(1);
-		model = glm::translate(tmp, glm::vec3(0.0, 0.0, 0.0));
-		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
@@ -725,24 +691,21 @@ int main()
 		//Cristales Capi 
 
 		model = glm::mat4(1);
-		model = glm::translate(tmpCapi, glm::vec3(0.0, 0.0, 0.0));
-		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
-		casaCapi.Draw(lightingShader);
+		cristalCasa.Draw(lightingShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(tmpCapi, glm::vec3(0.0, 0.0, 0.0));
-		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
 		cristalesBarda.Draw(lightingShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(tmpCapi, glm::vec3(0.0, 0.0, 0.0));
-		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.9f);
@@ -822,41 +785,41 @@ int main()
 }
 
 
-void keyframePersona() {
-	if (play)
-	{
-		if (i_curr_steps >= i_max_steps) //end of animation between frames?
-		{
-			playIndex++;
-			if (playIndex > FrameIndex - 2)	//end of total animation?
-			{
-				printf("termina anim\n");
-				playIndex = 0;
-				play = false;
-			}
-			else //Next frame interpolations
-			{
-				i_curr_steps = 0; //Reset counter
-				//Interpolation
-				interpolation();
-			}
-		}
-		else
-		{
-			//Draw animation
-			posX += KeyFrame[playIndex].incX;
-			posY += KeyFrame[playIndex].incY;
-			posZ += KeyFrame[playIndex].incZ;
-
-			rotBicep += KeyFrame[playIndex].rotIncBicep;
-			rotAntebrazo += KeyFrame[playIndex].rotIncAnte;
-
-			rotMano += KeyFrame[playIndex].rotIncMano;
-
-			i_curr_steps++;
-		}
-	}
-}
+//void keyframePersona() {
+//	if (play)
+//	{
+//		if (i_curr_steps >= i_max_steps) //end of animation between frames?
+//		{
+//			playIndex++;
+//			if (playIndex > FrameIndex - 2)	//end of total animation?
+//			{
+//				printf("termina anim\n");
+//				playIndex = 0;
+//				play = false;
+//			}
+//			else //Next frame interpolations
+//			{
+//				i_curr_steps = 0; //Reset counter
+//				//Interpolation
+//				interpolation();
+//			}
+//		}
+//		else
+//		{
+//			//Draw animation
+//			posX += KeyFrame[playIndex].incX;
+//			posY += KeyFrame[playIndex].incY;
+//			posZ += KeyFrame[playIndex].incZ;
+//
+//			rotBicep += KeyFrame[playIndex].rotIncBicep;
+//			rotAntebrazo += KeyFrame[playIndex].rotIncAnte;
+//
+//			rotMano += KeyFrame[playIndex].rotIncMano;
+//
+//			i_curr_steps++;
+//		}
+//	}
+//}
 
 void animacionMariposa() {
 	if (anim) {
@@ -921,55 +884,29 @@ void animacionMariposa() {
 	}
 }
 
-void animacionPuerta() {
-	if (animPuerta) {
-		if (rotPuerta < 90.0f)
-			rotPuerta += 1.5f;
-
-	}
-	else {
-		if (rotPuerta > 0.0f)
-			rotPuerta -= 1.5f;
-
-	}
-}
-
-void animacionRehilete()
-{
-	if (animRehilete) {
-		rotRehilete += 1.0f;
-	}
-
-}
-
 
 // Is called whenever a key is pressed/released via GLFW
 void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode)
 {
-	if (keys[GLFW_KEY_L])
-	{
-		if (play == false && FrameIndex > 1)
-		{
+	//if (keys[GLFW_KEY_L])
+	//{
+	//	if (play == false && FrameIndex > 1)
+	//	{
 
-			resetElements();
-			//First Interpolation				
-			interpolation();
+	//		resetElements();
+	//		//First Interpolation				
+	//		interpolation();
 
-			play = true;
-			playIndex = 0;
-			i_curr_steps = 0;
-		}
-		else
-		{
-			play = false;
-		}
+	//		play = true;
+	//		playIndex = 0;
+	//		i_curr_steps = 0;
+	//	}
+	//	else
+	//	{
+	//		play = false;
+	//	}
 
-	}
-
-	if (keys[GLFW_KEY_K])
-	{
-		animRehilete = !animRehilete;
-	}
+	//}
 
 
 	if (GLFW_KEY_ESCAPE == key && GLFW_PRESS == action)
@@ -998,9 +935,6 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 			LightP1 = glm::vec3(0.0f, 0.0f, 0.0f);
 	}
 
-	if (keys[GLFW_KEY_P]) {
-		animPuerta = !animPuerta;
-	}
 
 	if (keys[GLFW_KEY_Z])
 	{
@@ -1031,81 +965,12 @@ void MouseCallback(GLFWwindow *window, double xPos, double yPos)
 // Moves/alters the camera positions based on user input
 void DoMovement()
 {
-
 	if (keys[GLFW_KEY_1])
 	{
 		
 		movCamera = 0.01f;//Manda una velocidad de 0.01 a la camara automatica
 
 	}
-
-	if (keys[GLFW_KEY_2])
-	{
-		if (rotBicep<45.0f)
-			rotBicep += 1.0f;
-			
-	}
-
-	if (keys[GLFW_KEY_3])
-	{
-		if (rotBicep>-90.0f)
-			rotBicep -= 1.0f;
-		
-	}
-
-	if (keys[GLFW_KEY_4])
-	{
-		if (rotAntebrazo < 0.0f)
-			rotAntebrazo += 1.0f;
-
-	}
-
-	if (keys[GLFW_KEY_5])
-	{
-		if (rotAntebrazo > -90.0f)
-			rotAntebrazo -= 1.0f;
-
-	}
-
-	if (keys[GLFW_KEY_6])
-	{
-		if (rotMano < 90.0f)
-			rotMano += 1.0f;
-
-	}
-
-	if (keys[GLFW_KEY_7])
-	{
-		if (rotMano > -90.0f)
-			rotMano -= 1.0f;
-
-	}
-
-	
-
-	//Mov Personaje
-	if (keys[GLFW_KEY_H])
-	{
-		posZ += 1;
-	}
-
-	if (keys[GLFW_KEY_Y])
-	{
-		posZ -= 1;
-	}
-
-	if (keys[GLFW_KEY_G])
-	{
-		posX -= 1;
-	}
-
-	if (keys[GLFW_KEY_J])
-	{
-		posX += 1;
-	}
-
-
-
 
 	// Camera controls
 	if (keys[GLFW_KEY_W] || keys[GLFW_KEY_UP])
