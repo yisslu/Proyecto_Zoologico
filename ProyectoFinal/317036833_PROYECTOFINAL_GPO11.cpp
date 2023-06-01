@@ -60,6 +60,7 @@ GLfloat lastFrame = 0.0f;  	// Time of last frame
 
 // Keyframes
 float posX =PosIni.x, posY = PosIni.y, posZ = PosIni.z, rotRodIzq = 0;
+
 float posXLeones = PosIni.x + 20.0f, posYLeones = PosIni.y, posZLeones = PosIni.z + 20.0f;
 float posXPanda = PosIni.x - 20.0f, posYPanda = PosIni.y, posZPanda = PosIni.z - 20.0f;
 
