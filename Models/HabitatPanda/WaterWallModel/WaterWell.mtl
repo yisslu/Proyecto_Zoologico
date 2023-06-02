@@ -1,0 +1,47 @@
+newmtl GrassPlane:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Grass_BaseColor.jpg
+bump  -bm 1 Grass_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Grass_Specular.jpg
+Ns 18.00
+newmtl Medieval_Water_Well:Well_Bottom
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd Well_Bottom_BaseColor.png
+bump  -bm 1 Well_Bottom_Normal.png
+Ni 1.45
+Ks 0.50 0.50 0.50
+Ns 225.00
+newmtl Medieval_Water_Well:Well_Handle
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd Well_Handle_BaseColor.png
+Ni 1.45
+Ks 0.50 0.50 0.50
+Ns 225.00
+newmtl Medieval_Water_Well:Well_Roof
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd Well_Roof_BaseColor.png
+Ni 1.45
+Ks 0.50 0.50 0.50
+Ns 225.00
+newmtl Medieval_Water_Well:Well_Rope
+illum 4
+Kd 0.03 0.02 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+Ni 1.45
+Ks 0.13 0.13 0.13
+Ns 162.56
