@@ -1,0 +1,49 @@
+newmtl BaseExterior:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Concrete_material_1_baseColor.jpeg
+bump  -bm 1 Concrete_material_1_normal.jpeg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Concrete_material_1_specular.jpeg
+Ns 18.00
+newmtl Floor:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd concrete_pavement_BaseColor.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks concrete_pavement_Specular.jpg
+Ns 18.00
+newmtl GrassPlane:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Grass_BaseColor.jpg
+bump  -bm 1 Grass_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Grass_Specular.jpg
+Ns 18.00
+newmtl initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Dirty_pavement_BaseColor.jpg
+bump  -bm 1 Dirty_pavement_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Dirty_pavement_SpecularLevel.jpg
+Ns 18.00
