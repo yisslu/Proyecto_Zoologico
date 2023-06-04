@@ -576,7 +576,6 @@ int main()
 		glm::mat4 model(1);
 		//model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
 		model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
-		model = glm::translate(model,glm::vec3(posX,posY,posZ));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		casaCapi.Draw(lightingShader);
@@ -600,11 +599,6 @@ int main()
 		banca.Draw(lightingShader);
 		
 		//Banca1
-
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posX, posY, posZ));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		banca.Draw(lightingShader);
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
@@ -692,7 +686,7 @@ int main()
 		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
 		//alaDer.Draw(lightingShader);
-		alas.Draw(lightingShader);*/
+		//alas.Draw(lightingShader);
 
 		//Lion Habitat Load
 		model = glm::mat4(1);
