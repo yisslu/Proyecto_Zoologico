@@ -266,8 +266,8 @@ int main()
 	Model enviContorno((char*)"Models/Entorno/ConcreteLimit/Contorno.obj");
 	Model enviGate((char*)"Models/Entorno/Gate/wooden_gate.obj");
 	Model enviRoad((char*)"Models/Entorno/Road/Road.obj");
-	Model enviLFrontFence((char*)"Models/Entorno/Fence/LFrontFence.obj");
-	Model enviRFrontFence((char*)"Models/Entorno/Fence/RFrontFence.obj");
+	Model enviFrontFence((char*)"Models/Entorno/Fence/FrontFence.obj");
+	Model enviBackFence((char*)"Models/Entorno/Fence/BackFence.obj");
 	Model enviLateralFence((char*)"Models/Entorno/Fence/LateralFence.obj");
 
 	// Build and compile our shader program
@@ -721,26 +721,15 @@ int main()
 		enviGrassPlane.Draw(lightingShader);
 		enviContorno.Draw(lightingShader);
 		enviRoad.Draw(lightingShader);
-		enviLFrontFence.Draw(lightingShader);
-		enviRFrontFence.Draw(lightingShader);
+		enviFrontFence.Draw(lightingShader);
+		enviBackFence.Draw(lightingShader);
 		enviGate.Draw(lightingShader);
 		enviLateralFence.Draw(lightingShader);
 
-		model = glm::translate(model, glm::vec3(160.349f, 0.0f, -1.899f));
-		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(159.910f, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		enviLateralFence.Draw(lightingShader);
-
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -124.011f));
-		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviLFrontFence.Draw(lightingShader);
-		enviRFrontFence.Draw(lightingShader);
-		enviGate.Draw(lightingShader);
 
 		//Lion Habitat draw
 		model = glm::mat4(1);
