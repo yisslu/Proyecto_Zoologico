@@ -1,0 +1,91 @@
+newmtl Contorno:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Concrete_material_1_baseColor.jpeg
+bump  -bm 1 Concrete_material_1_normal.jpeg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Concrete_material_1_specular.jpeg
+Ns 18.00
+newmtl GrassPlane:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Grass_BaseColor.jpg
+bump  -bm 1 Grass_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Grass_Specular.jpg
+Ns 18.00
+newmtl cristalesPecera:pasted__phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 0.38 0.38 0.38
+map_Kd cristal.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl cristalesPecera:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 0.38 0.38 0.38
+map_Kd cristal.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl cueva:initialShadingGroup
+illum 4
+Kd 0.45 0.45 0.45
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl cueva:pasted__pasted__phong3SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Base.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl cueva:pasted__phong3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Base.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl cueva:pasted__phong3SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Base.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl cueva:phong1SG6
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Rock_9_Base_Color.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 18.00
+newmtl cueva:phong3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Base.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00

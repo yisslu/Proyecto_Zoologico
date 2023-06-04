@@ -76,6 +76,7 @@ float posXMari = PosIni.x, posYMari = PosIni.y, posZMari = PosIni.z + 44.768f;
 float posXLeones = PosIni.x - 13.277, posYLeones = PosIni.y - 3.134, posZLeones = PosIni.z - 44.467;
 float posXPanda = PosIni.x + 86.652f, posYPanda = PosIni.y, posZPanda = PosIni.z - 43.570;
 float posXPenguin = PosIni.x, posYPenguin = PosIni.y - 5.535, posZPenguin = PosIni.z;
+float posXHerp = PosIni.x + 74.816, posYHerp = PosIni.y, posZHerp = PosIni.z;
 float posXEnvi = PosIni.x, posYEnvi = PosIni.y, posZEnvi = PosIni.z;
 
 #define MAX_FRAMES 9
@@ -269,6 +270,12 @@ int main()
 	Model enviFrontFence((char*)"Models/Entorno/Fence/FrontFence.obj");
 	Model enviBackFence((char*)"Models/Entorno/Fence/BackFence.obj");
 	Model enviLateralFence((char*)"Models/Entorno/Fence/LateralFence.obj");
+	Model enviHerpFloor((char*)"Models/Herpetario/Floor/Floor.obj");
+
+	//Herpetario
+	Model HerpCueva((char*)"Models/Herpetario/Cueva/Cueva.obj");
+	Model Pecera((char*)"Models/Herpetario/Cueva/cristalesPecera.obj");
+
 
 	// Build and compile our shader program
 
@@ -725,6 +732,7 @@ int main()
 		enviBackFence.Draw(lightingShader);
 		enviGate.Draw(lightingShader);
 		enviLateralFence.Draw(lightingShader);
+		enviHerpFloor.Draw(lightingShader);
 
 		model = glm::translate(model, glm::vec3(159.910f, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -764,6 +772,12 @@ int main()
 		penguinRailing.Draw(lightingShader);
 		penguinStreet.Draw(lightingShader);
 
+		//Herpetario
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXHerp, posYHerp, posZHerp));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		HerpCueva.Draw(lightingShader);
 
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -835,6 +849,14 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
 		penguinStreetGlass.Draw(lightingShader);
+
+		//Herp Cristals
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXHerp, posYHerp, posZHerp));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
+		Pecera.Draw(lightingShader);
 
 
 		glDisable(GL_BLEND);
