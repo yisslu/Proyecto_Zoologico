@@ -70,12 +70,13 @@ GLfloat deltaTime = 0.0f;	// Time between current frame and last frame
 GLfloat lastFrame = 0.0f;  	// Time of last frame
 
 // Keyframes
-float posXCa = PosIni.x + 65.0f, posYCa = PosIni.y, posZCa = PosIni.z + 25.0f;
-float posXMari = PosIni.x + 95.0f, posYMari = PosIni.y, posZMari = PosIni.z + 25.0f;
+float posXCa = PosIni.x + 84.22f, posYCa = PosIni.y, posZCa = PosIni.z + 44.191f;
+float posXMari = PosIni.x, posYMari = PosIni.y, posZMari = PosIni.z + 44.768f;
 
-float posXLeones = PosIni.x + 20.0f, posYLeones = PosIni.y, posZLeones = PosIni.z + 40.0f;
-float posXPanda = PosIni.x + 20.0f, posYPanda = PosIni.y, posZPanda = PosIni.z - 40.0f;
-float posXPenguin = PosIni.x + 20.0f, posYPenguin = PosIni.y, posZPenguin = PosIni.z;
+float posXLeones = PosIni.x - 13.277, posYLeones = PosIni.y - 3.134, posZLeones = PosIni.z - 44.467;
+float posXPanda = PosIni.x + 86.652f, posYPanda = PosIni.y, posZPanda = PosIni.z - 43.570;
+float posXPenguin = PosIni.x, posYPenguin = PosIni.y - 5.535, posZPenguin = PosIni.z;
+float posXEnvi = PosIni.x, posYEnvi = PosIni.y, posZEnvi = PosIni.z;
 
 #define MAX_FRAMES 9
 int i_max_steps = 190;
@@ -214,7 +215,6 @@ int main()
 	//Carga de modelos del mariposario
 	Model domo((char*)"Models/Mariposario/Domo/Domo.obj");
 	Model cristales((char*)"Models/Mariposario/Domo/CristalesDomo.obj");
-	Model piso((char*)"Models/Mariposario/Domo/Piso.obj");
 	Model estructura((char*)"Models/Mariposario/Street_lamp/estructura.obj");
 	Model foco((char*)"Models/Mariposario/Street_lamp/foco.obj");
 	Model banca((char*)"Models/Mariposario/Bank/Bank.obj");
@@ -260,6 +260,15 @@ int main()
 	Model penguinStreet((char*)"Models/HabitatPinguinos/StreetLampModel/StreetLamp.obj");
 	Model penguinStreetGlass((char*)"Models/HabitatPinguinos/StreetLampModel/StreetLampGlass.obj");
 	Model penguinWater((char*)"Models/HabitatPinguinos/WaterPlane/Water.obj");
+
+	//Enviroment models 
+	Model enviGrassPlane((char*)"Models/Entorno/GrassPlane/GrassPlane.obj");
+	Model enviContorno((char*)"Models/Entorno/ConcreteLimit/Contorno.obj");
+	Model enviGate((char*)"Models/Entorno/Gate/wooden_gate.obj");
+	Model enviRoad((char*)"Models/Entorno/Road/Road.obj");
+	Model enviLFrontFence((char*)"Models/Entorno/Fence/LFrontFence.obj");
+	Model enviRFrontFence((char*)"Models/Entorno/Fence/RFrontFence.obj");
+	Model enviLateralFence((char*)"Models/Entorno/Fence/LateralFence.obj");
 
 	// Build and compile our shader program
 
@@ -498,7 +507,7 @@ int main()
 		// == ==========================
 		// Directional light
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.direction"), -0.2f, -1.0f, -0.3f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"), 0.1f, 0.1f, 0.1f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"), 0.4f, 0.4f, 0.4f);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.4f, 0.4f, 0.4f);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.specular"), 0.5f, 0.5f, 0.5f);
 
@@ -589,8 +598,9 @@ int main()
 		view = camera.GetViewMatrix();
 		//Habitat de capibaras
 		glm::mat4 model(1);
-		//model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
 		model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		casaCapi.Draw(lightingShader);
@@ -599,44 +609,45 @@ int main()
 		tina.Draw(lightingShader);
 
 		// Mariposario
-		//Piso
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		piso.Draw(lightingShader);
-
 		//Estructura del domo
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		domo.Draw(lightingShader);
 		estructura.Draw(lightingShader);
 		banca.Draw(lightingShader);
 		
 		//Banca1
+		/*model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		banca.Draw(lightingShader);
+
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
 		model = glm::translate(model, glm::vec3(0.2f, 0.0f, 0.2f));
 		model = glm::rotate(model, glm::radians(-180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		banca.Draw(lightingShader);
+		banca.Draw(lightingShader);*/
 
 		//Arbol 1
-		model = glm::mat4(1);
-		//model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
-		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
-		arbol.Draw(lightingShader);
+		//model = glm::mat4(1);
+		////model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		//model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
+		//arbol.Draw(lightingShader);
 
 		//Arbol 2
-		model = glm::mat4(1);
+		//model = glm::mat4(1);
 		//model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
-		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		/*model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
 		model = glm::translate(model, glm::vec3(5.3f, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
-		arbol.Draw(lightingShader);
+		arbol.Draw(lightingShader);*/
 
 		////Cuerpo de la mariposa
 		//model = glm::mat4(1);
@@ -700,7 +711,36 @@ int main()
 		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
 		//alaDer.Draw(lightingShader);
-		//alas.Draw(lightingShader);
+		//alas.Draw(lightingShader);*/
+
+		//Enviroment Draw
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		enviGrassPlane.Draw(lightingShader);
+		enviContorno.Draw(lightingShader);
+		enviRoad.Draw(lightingShader);
+		enviLFrontFence.Draw(lightingShader);
+		enviRFrontFence.Draw(lightingShader);
+		enviGate.Draw(lightingShader);
+		enviLateralFence.Draw(lightingShader);
+
+		model = glm::translate(model, glm::vec3(160.349f, 0.0f, -1.899f));
+		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		enviLateralFence.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -124.011f));
+		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		enviLFrontFence.Draw(lightingShader);
+		enviRFrontFence.Draw(lightingShader);
+		enviGate.Draw(lightingShader);
 
 		//Lion Habitat draw
 		model = glm::mat4(1);
@@ -724,7 +764,6 @@ int main()
 		pandaWaterWell.Draw(lightingShader);
 
 		//Penguin habitat draw
-		//Panda habitat Load
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXPenguin, posYPenguin, posZPenguin));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -736,10 +775,11 @@ int main()
 		penguinRailing.Draw(lightingShader);
 		penguinStreet.Draw(lightingShader);
 
+
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-		
+		//Lion's water load
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXLeones, posYLeones + 0.01f, posZLeones));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -750,6 +790,8 @@ int main()
 		//Cristales del domo
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
@@ -758,6 +800,8 @@ int main()
 		//Foco de la lampara
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
@@ -767,6 +811,8 @@ int main()
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
@@ -774,6 +820,8 @@ int main()
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
@@ -781,6 +829,8 @@ int main()
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.9f);

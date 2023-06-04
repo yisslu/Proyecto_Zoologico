@@ -1,2073 +1,3 @@
-newmtl F_M1:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M1:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M1:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M2:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M2:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M2:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M3:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M3:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M3:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M4:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M4:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M4:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M5:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M5:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M5:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M6:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M6:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M6:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M7:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M7:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M7:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M8:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M8:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M8:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M9:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M9:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M9:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M10:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M10:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M10:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M11:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M11:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M11:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M12:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M12:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M12:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M13:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M13:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M13:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M14:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M14:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M14:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M15:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M15:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M15:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M16:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M16:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M16:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M17:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M17:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M17:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M18:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M18:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M18:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M19:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M19:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M19:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M21:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M21:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M21:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M22:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M22:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M22:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M23:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M23:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M23:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M24:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M24:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M24:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M25:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M25:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M25:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M26:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M26:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M26:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M27:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M27:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M27:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M28:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M28:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M28:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M29:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M29:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M29:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M30:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M30:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M30:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M31:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M31:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M31:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M32:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M32:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M32:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M33:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M33:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M33:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M34:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M34:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M34:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M36:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M36:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M36:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M37:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M37:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M37:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M38:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M38:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M38:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M39:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M39:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M39:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M40:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M40:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M40:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M41:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M41:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M41:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M42:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M42:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M42:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M43:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M43:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M43:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M44:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M44:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M44:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M45:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M45:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M45:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M46:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M46:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M46:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M47:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M47:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M47:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M48:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M48:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M48:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M49:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M49:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M49:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M50:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M50:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M50:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M51:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M51:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M51:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M52:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M52:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M52:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M53:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M53:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M53:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M55:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M55:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M55:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M56:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M56:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M56:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M57:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M57:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M57:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M58:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M58:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M58:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M59:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M59:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M59:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M60:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M60:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M60:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M61:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M61:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M61:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M62:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M62:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M62:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M63:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M63:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M63:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M64:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M64:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M64:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M65:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M65:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M65:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M66:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M66:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M66:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M67:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M67:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M67:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M68:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M68:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M68:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M70:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M70:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M70:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M71:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M71:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M71:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M72:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M72:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M72:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
-newmtl F_M73:F_M1_Fill1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Fill_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Fill_Roughness.png
-Ns 0.00
-newmtl F_M73:F_M1_Post1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Post_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Post_Roughness.png
-Ns 0.00
-newmtl F_M73:F_M1_Support
-illum 4
-Kd 0.00 0.00 0.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
-map_Kd F_M1_New_Support_Base_Color.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks F_M1_New_Support_Roughness.png
-Ns 0.00
 newmtl GrassPlane:phong1SG
 illum 4
 Kd 0.00 0.00 0.00
@@ -2079,3 +9,373 @@ Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks Grass_Specular.jpg
 Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f3:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f7:friendly_fence_v01_f3:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f7:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f7:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f7:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f7:pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f9:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f10:friendly_fence_v01_f9:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f11:friendly_fence_v01_f9:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f12:friendly_fence_v01_f11:friendly_fence_v01_f9:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f13:friendly_fence_v01_f11:friendly_fence_v01_f9:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f14:friendly_fence_v01_f13:friendly_fence_v01_f11:friendly_fence_v01_f9:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f15:friendly_fence_v01_f13:friendly_fence_v01_f11:friendly_fence_v01_f9:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f16:friendly_fence_v01_f15:friendly_fence_v01_f13:friendly_fence_v01_f11:friendly_fence_v01_f9:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f17:friendly_fence_v01_f15:friendly_fence_v01_f13:friendly_fence_v01_f11:friendly_fence_v01_f9:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f18:friendly_fence_v01_f17:friendly_fence_v01_f15:friendly_fence_v01_f13:friendly_fence_v01_f11:friendly_fence_v01_f9:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f20:friendly_fence_v01_f9:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f20:friendly_fence_v01_f11:friendly_fence_v01_f9:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f20:friendly_fence_v01_f12:friendly_fence_v01_f11:friendly_fence_v01_f9:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f20:friendly_fence_v01_f13:friendly_fence_v01_f11:friendly_fence_v01_f9:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f20:friendly_fence_v01_f14:friendly_fence_v01_f13:friendly_fence_v01_f11:friendly_fence_v01_f9:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f20:friendly_fence_v01_f15:friendly_fence_v01_f13:friendly_fence_v01_f11:friendly_fence_v01_f9:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f20:friendly_fence_v01_f16:friendly_fence_v01_f15:friendly_fence_v01_f13:friendly_fence_v01_f11:friendly_fence_v01_f9:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f20:friendly_fence_v01_f17:friendly_fence_v01_f15:friendly_fence_v01_f13:friendly_fence_v01_f11:friendly_fence_v01_f9:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:friendly_fence_v01_f20:friendly_fence_v01_f18:friendly_fence_v01_f17:friendly_fence_v01_f15:friendly_fence_v01_f13:friendly_fence_v01_f11:friendly_fence_v01_f9:friendly_fence_v01_f8:friendly_fence_v01_f6:friendly_fence_v01_f5:friendly_fence_v01_f4:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:pasted__pasted__phong1SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl friendly_fence_v01_f1:pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood_BaseColor.jpg
+bump  -bm 1 wood_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks wood_Specular.jpg
+Ns 18.00
+newmtl wooden_gate:Mat_0
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd 5.png
+Ni 1.00
