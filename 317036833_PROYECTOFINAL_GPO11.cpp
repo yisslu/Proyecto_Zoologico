@@ -616,11 +616,6 @@ int main()
 		//Banca1
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		banca.Draw(lightingShader);
-
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
 		model = glm::translate(model, glm::vec3(0.2f, 0.0f, 0.2f));
 		model = glm::rotate(model, glm::radians(-180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -705,7 +700,7 @@ int main()
 		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
 		//alaDer.Draw(lightingShader);
-		//alas.Draw(lightingShader);*/
+		//alas.Draw(lightingShader);
 
 		//Lion Habitat draw
 		model = glm::mat4(1);
