@@ -32,6 +32,8 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 void MouseCallback(GLFWwindow *window, double xPos, double yPos);
 void DoMovement();
 void animacionMariposa();
+void animacionPinguinos();
+void animacionPanda();
 
 // Window dimensions
 const GLuint WIDTH = 800, HEIGHT = 600;
@@ -56,6 +58,72 @@ bool anim = false;
 bool anim2 = false;
 bool direccion = true;
 bool recorridoMariposa = false;
+//Penguin Animation variables
+float initRotation = 90.0f;
+float rotPaSkiper = 0.0f;
+float rotXSkiperIzq = 0.0f;
+float rotZSkiperIzq = 0.0f;
+float rotYSkiperIzq = 0.0f;
+float rotXSkiperDer = 0.0f;
+float rotZSkiperDer = 0.0f;
+float rotYSkiperDer = 0.0f;
+float rotPSkiper = 90.0f;
+float trasXSkiper = 0.0f;
+float rotXKowalskiDer = 0.0f;
+float rotZKowalskiDer = 0.0f;
+float rotYKowalskiDer = 0.0f;
+float rotCRico = 0.0f;
+float rotXRicoIzq = 0.0f;
+float rotZRicoIzq = 0.0f;
+float rotYRicoIzq = 0.0f;
+bool animPenguin = false;
+bool route1 = true;
+bool route2 = false;
+bool route3 = false;
+bool route4 = false;
+bool route5 = false;
+bool route6 = false;
+bool route7 = false;
+
+//Panda's animation variables
+bool animPanda = false;
+
+float pandaBicepDerRotX = 0.0f;
+float pandaBicepDerRotY = 0.0f;
+float pandaBicepDerRotZ = 0.0f;
+float pandaBicepIzqRotX = 0.0f;
+float pandaBicepIzqRotY = 0.0f;
+float pandaBicepIzqRotZ = 0.0f;
+
+float pandaAntebrazoDerRotX = 0.0f;
+float pandaAntebrazoDerRotY = 0.0f;
+float pandaAntebrazoDerRotZ = 0.0f;
+float pandaAntebrazoIzqRotX = 0.0f;
+float pandaAntebrazoIzqRotY = 0.0f;
+float pandaAntebrazoIzqRotZ = 0.0f;
+
+float pandaManoDerRotX = 0.0f;
+float pandaManoDerRotY = 0.0f;
+float pandaManoDerRotZ = 0.0f;
+float pandaManoIzqRotX = 0.0f;
+float pandaManoIzqRotY = 0.0f;
+float pandaManoIzqRotZ = 0.0f;
+
+float pandaPiernaDerRotX = 0.0f;
+float pandaPiernaDerRotY = 0.0f;
+float pandaPiernaDerRotZ = 0.0f;
+float pandaPiernaIzqRotX = 0.0f;
+float pandaPiernaIzqRotY = 0.0f;
+float pandaPiernaIzqRotZ = 0.0f;
+
+bool part1 = true;
+bool part2 = false;
+bool part3 = false;
+bool part4 = false;
+bool part5 = false;
+bool part6 = false;
+bool part7 = false;
+bool part8 = false;
 
 // Light attributes
 glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
@@ -213,70 +281,94 @@ int main()
 	Shader SkyBoxshader("Shaders/SkyBox.vs", "Shaders/SkyBox.frag");
 	Shader animShader("Shaders/anim.vs", "Shaders/anim.frag");
 
-	//Carga de modelos del mariposario
-	Model domo((char*)"Models/Mariposario/Domo/Domo.obj");
-	Model cristales((char*)"Models/Mariposario/Domo/CristalesDomo.obj");
-	Model estructura((char*)"Models/Mariposario/Street_lamp/estructura.obj");
-	Model foco((char*)"Models/Mariposario/Street_lamp/foco.obj");
-	Model banca((char*)"Models/Mariposario/Bank/Bank.obj");
-	Model arbol((char*)"Models/Mariposario/tree/tree.obj");
-	Model cuerpoMari((char*)"Models/Mariposario/Butterfly/body.obj");
-	Model alaIzq((char*)"Models/Mariposario/Butterfly/wing_left.obj");
-	Model alaDer((char*)"Models/Mariposario/Butterfly/wing_right.obj");
+	////Carga de modelos del mariposario
+	//Model domo((char*)"Models/Mariposario/Domo/Domo.obj");
+	//Model cristales((char*)"Models/Mariposario/Domo/CristalesDomo.obj");
+	//Model estructura((char*)"Models/Mariposario/Street_lamp/estructura.obj");
+	//Model foco((char*)"Models/Mariposario/Street_lamp/foco.obj");
+	//Model banca((char*)"Models/Mariposario/Bank/Bank.obj");
+	//Model arbol((char*)"Models/Mariposario/tree/tree.obj");
+	//Model cuerpoMari((char*)"Models/Mariposario/Butterfly/body.obj");
+	//Model alaIzq((char*)"Models/Mariposario/Butterfly/wing_left.obj");
+	//Model alaDer((char*)"Models/Mariposario/Butterfly/wing_right.obj");
 
-	//Carga de modelos de capibaras
-	Model casaCapi((char*)"Models/Capibaras/caseta/CasaDescanso.obj");
-	Model cristalCasa((char*)"Models/Capibaras/caseta/Cristal.obj");
-	Model barda((char*)"Models/Capibaras/habitat/Barda.obj");
-	Model cristalesBarda((char*)"Models/Capibaras/habitat/Cristales.obj");
-	Model planta((char*)"Models/Capibaras/habitat/plantas.obj");
-	Model rocas((char*)"Models/Capibaras/RocasAmbiente/rocas.obj");
-	Model tina((char*)"Models/Capibaras/tina/Tina.obj");
-	Model aguaTina((char*)"Models/Capibaras/tina/Agua.obj");
-	
-	//Lion's habitat model declarations
-	Model lionFloor((char*)"Models/HabitatLeones/FloorModel/FloorPlane.obj");
-	Model lionRocks((char*)"Models/HabitatLeones/RockCollection/Rocks.obj");
-	Model lionWater((char*)"Models/HabitatLeones/WaterLakeModel/WaterPlane.obj");
-	Model lionATree((char*)"Models/HabitatLeones/Tree/ATree.obj");
-	Model lionBTree((char*)"Models/HabitatLeones/Tree/BTree.obj");
-	Model lionCTree((char*)"Models/HabitatLeones/Tree/CTree.obj");
-	Model lionFences((char*)"Models/HabitatLeones/FencesModel/FenceModel.obj");
-	Model lionExterior((char*)"Models/HabitatLeones/ConcreteExterior/BaseExterior.obj");
+	////Carga de modelos de capibaras
+	//Model casaCapi((char*)"Models/Capibaras/caseta/CasaDescanso.obj");
+	//Model cristalCasa((char*)"Models/Capibaras/caseta/Cristal.obj");
+	//Model barda((char*)"Models/Capibaras/habitat/Barda.obj");
+	//Model cristalesBarda((char*)"Models/Capibaras/habitat/Cristales.obj");
+	//Model planta((char*)"Models/Capibaras/habitat/plantas.obj");
+	//Model rocas((char*)"Models/Capibaras/RocasAmbiente/rocas.obj");
+	//Model tina((char*)"Models/Capibaras/tina/Tina.obj");
+	//Model aguaTina((char*)"Models/Capibaras/tina/Agua.obj");
+	//
+	////Lion's habitat model load
+	//Model lionFloor((char*)"Models/HabitatLeones/FloorModel/FloorPlane.obj");
+	//Model lionRocks((char*)"Models/HabitatLeones/RockCollection/Rocks.obj");
+	//Model lionWater((char*)"Models/HabitatLeones/WaterLakeModel/WaterPlane.obj");
+	//Model lionATree((char*)"Models/HabitatLeones/Tree/ATree.obj");
+	//Model lionBTree((char*)"Models/HabitatLeones/Tree/BTree.obj");
+	//Model lionCTree((char*)"Models/HabitatLeones/Tree/CTree.obj");
+	//Model lionFences((char*)"Models/HabitatLeones/FencesModel/FenceModel.obj");
+	//Model lionExterior((char*)"Models/HabitatLeones/ConcreteExterior/BaseExterior.obj");
 
-	//Panda's habitat model declaration
+	//Panda's habitat model load
 	Model pandaFloor((char*)"Models/HabitatPanda/GrassPlane/GrassPlane.obj");
 	Model pandaRocks((char*)"Models/HabitatPanda/Rocks/Rock.obj");
 	Model pandaFence((char*)"Models/HabitatPanda/FenceModel/FenceModel.obj");
 	Model pandaChineseBuilding((char*)"Models/HabitatPanda/ChineseBuilding/ChineseBuilding.obj");
 	Model pandaBambuPlant((char*)"Models/HabitatPanda/BambuPlant/BambuPlant.obj");
 	Model pandaWaterWell((char*)"Models/HabitatPanda/WaterWallModel/WaterWell.obj");
+	Model pandaBody((char*)"Models/HabitatPanda/Po_Panda/Po.obj");
+	Model pandaBicepIzq((char*)"Models/HabitatPanda/Po_Panda/BicepIzq.obj");
+	Model pandaBicepDer((char*)"Models/HabitatPanda/Po_Panda/BicepDer.obj");
+	Model pandaAntebrazoIzq((char*)"Models/HabitatPanda/Po_Panda/AntebrazoIzq.obj");
+	Model pandaAntebrazoDer((char*)"Models/HabitatPanda/Po_Panda/AntebrazoDer.obj");
+	Model pandaManoIzq((char*)"Models/HabitatPanda/Po_Panda/ManoIzq.obj");
+	Model pandaManoDer((char*)"Models/HabitatPanda/Po_Panda/ManoDer.obj");
+	Model pandaPiernaIzq((char*)"Models/HabitatPanda/Po_Panda/PataIzq.obj");
+	Model pandaPiernaDer((char*)"Models/HabitatPanda/Po_Panda/PataDer.obj");
 
-	//Penguin's habitat model declaration
-	Model penguinCenter((char*)"Models/HabitatPinguinos/CentralBaseModel/Center.obj");
-	Model penguinExternal((char*)"Models/HabitatPinguinos/ExternalBaseModel/ExternalBaseModel.obj");
-	Model penguinFloor((char*)"Models/HabitatPinguinos/FloorModel/Floor.obj");
-	Model penguinBowl((char*)"Models/HabitatPinguinos/PenguinBowlModel/Bowl.obj");
-	Model penguinRailing((char*)"Models/HabitatPinguinos/RailingModel/RailingModel.obj");
-	Model penguinStreet((char*)"Models/HabitatPinguinos/StreetLampModel/StreetLamp.obj");
-	Model penguinStreetGlass((char*)"Models/HabitatPinguinos/StreetLampModel/StreetLampGlass.obj");
-	Model penguinWater((char*)"Models/HabitatPinguinos/WaterPlane/Water.obj");
+	////Penguin's habitat models load
+	//Model penguinCenter((char*)"Models/HabitatPinguinos/CentralBaseModel/Center.obj");
+	//Model penguinExternal((char*)"Models/HabitatPinguinos/ExternalBaseModel/ExternalBaseModel.obj");
+	//Model penguinFloor((char*)"Models/HabitatPinguinos/FloorModel/Floor.obj");
+	//Model penguinBowl((char*)"Models/HabitatPinguinos/PenguinBowlModel/Bowl.obj");
+	//Model penguinRailing((char*)"Models/HabitatPinguinos/RailingModel/RailingModel.obj");
+	//Model penguinStreet((char*)"Models/HabitatPinguinos/StreetLampModel/StreetLamp.obj");
+	//Model penguinStreetGlass((char*)"Models/HabitatPinguinos/StreetLampModel/StreetLampGlass.obj");
+	//Model penguinWater((char*)"Models/HabitatPinguinos/WaterPlane/Water.obj");
+	//Model cabo((char*)"Models/HabitatPinguinos/PenguinModels/CaboModel/Cabo.obj");
+	//Model caboADer((char*)"Models/HabitatPinguinos/PenguinModels/CaboModel/CaboAletaDerecha.obj");
+	//Model caboAIzq((char*)"Models/HabitatPinguinos/PenguinModels/CaboModel/CaboAletaIzquierda.obj");
+	//Model kowaslki((char*)"Models/HabitatPinguinos/PenguinModels/KowalskiModel/Kowalski.obj");
+	//Model kowaslkiADer((char*)"Models/HabitatPinguinos/PenguinModels/KowalskiModel/KowalskiADer.obj");
+	//Model kowaslkiAIzq((char*)"Models/HabitatPinguinos/PenguinModels/KowalskiModel/KowalskiAIzq.obj");
+	//Model rico((char*)"Models/HabitatPinguinos/PenguinModels/RicoModel/Rico.obj");
+	//Model ricoADer((char*)"Models/HabitatPinguinos/PenguinModels/RicoModel/RicoADer.obj");
+	//Model ricoAIzq((char*)"Models/HabitatPinguinos/PenguinModels/RicoModel/RicoAIzq.obj");
+	//Model skiper((char*)"Models/HabitatPinguinos/PenguinModels/SkiperModel/Skiper.obj");
+	//Model skiperADer((char*)"Models/HabitatPinguinos/PenguinModels/SkiperModel/SkiperADer.obj");
+	//Model skiperAIzq((char*)"Models/HabitatPinguinos/PenguinModels/SkiperModel/SkiperAIzq.obj");
+	//Model skiperPDer((char*)"Models/HabitatPinguinos/PenguinModels/SkiperModel/SkiperPDer.obj");
+	//Model skiperPIzq((char*)"Models/HabitatPinguinos/PenguinModels/SkiperModel/SkiperPIzq.obj");
 
-	//Enviroment models 
-	Model enviGrassPlane((char*)"Models/Entorno/GrassPlane/GrassPlane.obj");
-	Model enviContorno((char*)"Models/Entorno/ConcreteLimit/Contorno.obj");
-	Model enviGate((char*)"Models/Entorno/Gate/wooden_gate.obj");
-	Model enviRoad((char*)"Models/Entorno/Road/Road.obj");
-	Model enviFrontFence((char*)"Models/Entorno/Fence/FrontFence.obj");
-	Model enviBackFence((char*)"Models/Entorno/Fence/BackFence.obj");
-	Model enviLateralFence((char*)"Models/Entorno/Fence/LateralFence.obj");
-	Model enviHerpFloor((char*)"Models/Herpetario/Floor/Floor.obj");
-	Model enviStreetLight((char*)"Models/Entorno/StreetLight/StreetLight.obj");
-	Model enviStreetLightGlass((char*)"Models/Entorno/StreetLight/StreetLightGlass.obj");
-	Model enviTree((char*)"Models/Entorno/tree/tree_maple.obj");
-	//Herpetario
-	Model HerpCueva((char*)"Models/Herpetario/Cueva/Cueva.obj");
-	Model Pecera((char*)"Models/Herpetario/Cueva/cristalesPecera.obj");
+	////Enviroment's models load
+	//Model enviGrassPlane((char*)"Models/Entorno/GrassPlane/GrassPlane.obj");
+	//Model enviContorno((char*)"Models/Entorno/ConcreteLimit/Contorno.obj");
+	//Model enviGate((char*)"Models/Entorno/Gate/wooden_gate.obj");
+	//Model enviRoad((char*)"Models/Entorno/Road/Road.obj");
+	//Model enviFrontFence((char*)"Models/Entorno/Fence/FrontFence.obj");
+	//Model enviBackFence((char*)"Models/Entorno/Fence/BackFence.obj");
+	//Model enviLateralFence((char*)"Models/Entorno/Fence/LateralFence.obj");
+	//Model enviHerpFloor((char*)"Models/Herpetario/Floor/Floor.obj");
+	//Model enviStreetLight((char*)"Models/Entorno/StreetLight/StreetLight.obj");
+	//Model enviStreetLightGlass((char*)"Models/Entorno/StreetLight/StreetLightGlass.obj");
+	//Model enviTree((char*)"Models/Entorno/tree/tree_maple.obj");
+
+	////Herpetario
+	//Model HerpCueva((char*)"Models/Herpetario/Cueva/Cueva.obj");
+	//Model Pecera((char*)"Models/Herpetario/Cueva/cristalesPecera.obj");
 
 
 	// Build and compile our shader program
@@ -495,6 +587,7 @@ int main()
 		glfwPollEvents();
 		DoMovement();
 		animacionMariposa();
+		animacionPinguinos();
 
 
 		// Clear the colorbuffer
@@ -598,6 +691,11 @@ int main()
 
 		glBindVertexArray(VAO);
 		glm::mat4 tmp = glm::mat4(1.0f); //Temp
+		glm::mat4 tmpPanda = glm::mat4(1.0f); //Temp for Po
+		glm::mat4 tmpCabo = glm::mat4(1.0f); //Temp for Cabo
+		glm::mat4 tmpKowalski = glm::mat4(1.0f); //Temp for Kowalski
+		glm::mat4 tmpRico = glm::mat4(1.0f); //Temp for Rico
+		glm::mat4 tmpSkiper = glm::mat4(1.0f);	//Temp for Skiper
 
 		view = camera.GetViewMatrix();
 
@@ -607,26 +705,26 @@ int main()
 		view = camera.GetViewMatrix();
 		//Habitat de capibaras
 		glm::mat4 model(1);
-		model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
-		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
-		casaCapi.Draw(lightingShader);
-		barda.Draw(lightingShader);
-		rocas.Draw(lightingShader);
-		tina.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
+		//model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		//casaCapi.Draw(lightingShader);
+		//barda.Draw(lightingShader);
+		//rocas.Draw(lightingShader);
+		//tina.Draw(lightingShader);
 
-		// Mariposario
-		//Estructura del domo
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
-		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		domo.Draw(lightingShader);
-		estructura.Draw(lightingShader);
-		banca.Draw(lightingShader);
+		//// Mariposario
+		////Estructura del domo
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		//model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//domo.Draw(lightingShader);
+		//estructura.Draw(lightingShader);
+		//banca.Draw(lightingShader);
 		
 		//Banca1
 		/*model = glm::mat4(1);
@@ -722,156 +820,156 @@ int main()
 		//alaDer.Draw(lightingShader);
 		//alas.Draw(lightingShader);*/
 
-		//Enviroment Draw
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviGrassPlane.Draw(lightingShader);
-		enviContorno.Draw(lightingShader);
-		enviRoad.Draw(lightingShader);
-		enviFrontFence.Draw(lightingShader);
-		enviBackFence.Draw(lightingShader);
-		enviGate.Draw(lightingShader);
-		enviLateralFence.Draw(lightingShader);
-		enviHerpFloor.Draw(lightingShader);
+		////Enviroment Draw
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviGrassPlane.Draw(lightingShader);
+		//enviContorno.Draw(lightingShader);
+		//enviRoad.Draw(lightingShader);
+		//enviFrontFence.Draw(lightingShader);
+		//enviBackFence.Draw(lightingShader);
+		//enviGate.Draw(lightingShader);
+		//enviLateralFence.Draw(lightingShader);
+		//enviHerpFloor.Draw(lightingShader);
 
-		model = glm::translate(model, glm::vec3(159.910f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviLateralFence.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(159.910f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviLateralFence.Draw(lightingShader);
 
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXEnvi + 18.37, posYEnvi, posZEnvi + 13.749));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(23.328f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(22.765f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(25.244f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -27.836f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-25.244f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-22.765f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-23.328f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(5.917f, 0.0f, -33.791f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(15.261f, 0.0f, 13.236f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(19.309f, 0.0f, -11.99f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(16.506f, 0.0f, -10.745f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 28.337f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(25.731f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -28.815f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(5.954f, 0.0f, 48.91f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 17.65f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-2.127f, 0.0f, 25.519f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-19.989f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-23.605f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-12.759f, 0.0f, 13.078f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-15.098f, 0.0f, -8.4f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-25.412f, 0.0f, -11.59f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-33.812f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-3.402f, 0.0f, -17.119f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -19.245f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -21.053f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -28.389f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(30.197f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 28.283f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLight.Draw(lightingShader);
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXEnvi + 18.37, posYEnvi, posZEnvi + 13.749));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(23.328f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(22.765f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(25.244f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, -27.836f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-25.244f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-22.765f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-23.328f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(5.917f, 0.0f, -33.791f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(15.261f, 0.0f, 13.236f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(19.309f, 0.0f, -11.99f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(16.506f, 0.0f, -10.745f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 28.337f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(25.731f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, -28.815f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(5.954f, 0.0f, 48.91f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 17.65f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-2.127f, 0.0f, 25.519f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-19.989f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-23.605f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-12.759f, 0.0f, 13.078f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-15.098f, 0.0f, -8.4f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-25.412f, 0.0f, -11.59f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-33.812f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-3.402f, 0.0f, -17.119f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, -19.245f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, -21.053f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, -28.389f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(30.197f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 28.283f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLight.Draw(lightingShader);
 
-		//Lion Habitat draw
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXLeones, posYLeones, posZLeones));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		lionRocks.Draw(lightingShader);
-		lionFloor.Draw(lightingShader);
-		lionExterior.Draw(lightingShader);
-		lionFences.Draw(lightingShader);
+		////Lion Habitat draw
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXLeones, posYLeones, posZLeones));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//lionRocks.Draw(lightingShader);
+		//lionFloor.Draw(lightingShader);
+		//lionExterior.Draw(lightingShader);
+		//lionFences.Draw(lightingShader);
 
 		//Panda habitat draw
 		model = glm::mat4(1);
@@ -884,8 +982,93 @@ int main()
 		pandaRocks.Draw(lightingShader);
 		pandaWaterWell.Draw(lightingShader);
 
-		//Penguin habitat draw
+		//Po herarchy
+		//Body draw
 		model = glm::mat4(1);
+		tmpPanda = model = glm::translate(model, glm::vec3(87.785f, 1.0f, -38.276f));
+		model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		pandaBody.Draw(lightingShader);
+		//Right Bicep Draw
+		model = glm::translate(tmpPanda, glm::vec3( -0.336f, 0.338f, -0.07f));
+		model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
+		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaBicepDerRotX), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaBicepDerRotY), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(55.0f - pandaBicepDerRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		pandaBicepDer.Draw(lightingShader);
+		//Right Forearm Draw
+		model = glm::translate(model, glm::vec3(-0.303f, -0.065f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaAntebrazoDerRotX), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaAntebrazoDerRotY), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaAntebrazoDerRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		pandaAntebrazoDer.Draw(lightingShader);
+		//Right Hand Draw
+		model = glm::translate(model, glm::vec3(-0.47f, 0.011f, 0.014f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaManoDerRotX), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaManoDerRotY), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaManoDerRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		pandaManoDer.Draw(lightingShader);
+		//Left Bicep Draw
+		model = glm::translate(tmpPanda, glm::vec3(0.351f, 0.338f, -0.065f));
+		model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
+		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaBicepIzqRotX), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaBicepIzqRotY), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(-55.0f + pandaBicepIzqRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		pandaBicepIzq.Draw(lightingShader);
+		//Left Forearm Draw
+		model = glm::translate(model, glm::vec3(0.331f, -0.055f, -0.01f));
+		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaAntebrazoIzqRotX), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaAntebrazoIzqRotY), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaAntebrazoIzqRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		pandaAntebrazoIzq.Draw(lightingShader);
+		//Left Hand Draw
+		model = glm::translate(model, glm::vec3(0.433f, -0.015f, 0.029f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaManoIzqRotX), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaManoIzqRotY), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaManoIzqRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		pandaManoIzq.Draw(lightingShader);
+		//Right Leg Draw
+		model = glm::translate(tmpPanda, glm::vec3(-0.265f, -0.556f, 0.069f));
+		model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
+		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaPiernaDerRotX), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaPiernaDerRotY), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaPiernaDerRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		pandaPiernaDer.Draw(lightingShader);
+		//Left Leg Draw
+		model = glm::translate(tmpPanda, glm::vec3(0.207f, -0.559f, 0.027f));
+		model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
+		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaPiernaIzqRotX), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaPiernaIzqRotY), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pandaPiernaIzqRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		pandaPiernaIzq.Draw(lightingShader);
+
+		//Penguin habitat draw
+		/*model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXPenguin, posYPenguin, posZPenguin));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
@@ -894,77 +1077,211 @@ int main()
 		penguinBowl.Draw(lightingShader);
 		penguinFloor.Draw(lightingShader);
 		penguinRailing.Draw(lightingShader);
-		penguinStreet.Draw(lightingShader);
+		penguinStreet.Draw(lightingShader);*/
 
-		//Herpetario
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXHerp, posYHerp, posZHerp));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		HerpCueva.Draw(lightingShader);
+		//Penguins Draw
+		//Cabo Herarchy
+		//Body
+		//view = camera.GetViewMatrix();
+		//model = glm::mat4(1);
+		//tmpCabo = model = glm::translate(model, glm::vec3(-2.0, 2.4f, 0.0f));
+		//model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
+		//model = glm::rotate(model, glm::radians(initRotation), glm::vec3(0.0f, 1.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//cabo.Draw(lightingShader);
+		////Right Fin
+		//view = camera.GetViewMatrix();
+		//model = glm::translate(tmpCabo, glm::vec3(0.2f, 0.45f, -0.3f));
+		//model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
+		//model = glm::rotate(model, glm::radians(initRotation), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//caboADer.Draw(lightingShader);
+		////Left Fin
+		//view = camera.GetViewMatrix();
+		//model = glm::translate(tmpCabo, glm::vec3(0.2f, 0.45f, 0.3f));
+		//model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
+		//model = glm::rotate(model, glm::radians(initRotation), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::rotate(model, glm::radians(55.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//caboAIzq.Draw(lightingShader);
+		////Kowalski Herarchy
+		////Body
+		//model = glm::mat4(1);
+		//tmpKowalski = model = glm::translate(model, glm::vec3(2.0, 2.8f, -2.0f));
+		//model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
+		//model = glm::rotate(model, glm::radians(-initRotation), glm::vec3(0.0f, 1.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//kowaslki.Draw(lightingShader);
+		////Right Fin
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXEnvi + 2.0f, posYEnvi + 2.8f, posZEnvi - 2.0f));
+		//model = glm::rotate(model, glm::radians(-initRotation), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::translate(model, glm::vec3(0.3f, 0.6f, -0.1f));
+		//model = glm::rotate(model, glm::radians(-55.0f + rotZKowalskiDer), glm::vec3(0.0f, 0.0f, 1.0f));
+		//model = glm::rotate(model, glm::radians(rotXKowalskiDer), glm::vec3(1.0f, 0.0f, 0.0f));
+		//model = glm::rotate(model, glm::radians(rotYKowalskiDer), glm::vec3(0.0f, 1.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//kowaslkiADer.Draw(lightingShader);
+		////Left Fin
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXEnvi + 2.0f, posYEnvi + 2.8f, posZEnvi - 2.0f));
+		//model = glm::rotate(model, glm::radians(-initRotation), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::translate(model, glm::vec3(-0.3f, 0.6f, -0.1f));
+		//model = glm::rotate(model, glm::radians(55.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//kowaslkiAIzq.Draw(lightingShader);
+		////Rico Herarchy
+		////Body
+		//model = glm::mat4(1);
+		//tmpRico = model = glm::translate(model, glm::vec3(2.0, 2.6f, 2.0f));
+		//model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
+		//model = glm::rotate(model, glm::radians(-initRotation), glm::vec3(0.0f, 1.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//rico.Draw(lightingShader);
+		////Right Fin
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXEnvi + 2.0f, posYEnvi + 2.6f, posZEnvi + 2.0f));
+		//model = glm::rotate(model, glm::radians(-initRotation), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::translate(model, glm::vec3(0.4f, 0.6f, -0.1f));
+		//model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//ricoADer.Draw(lightingShader);
+		////Left Fin
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXEnvi + 2.0f, posYEnvi + 2.6f, posZEnvi + 2.0f));
+		//model = glm::rotate(model, glm::radians(-initRotation), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::translate(model, glm::vec3(-0.4f, 0.6f, -0.1f));
+		//model = glm::rotate(model, glm::radians(55.0f - rotZRicoIzq), glm::vec3(0.0f, 0.0f, 1.0f));
+		//model = glm::rotate(model, glm::radians(rotXRicoIzq), glm::vec3(1.0f, 0.0f, 0.0f));
+		//model = glm::rotate(model, glm::radians(rotYRicoIzq), glm::vec3(0.0f, 1.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//ricoAIzq.Draw(lightingShader);
+		////Skiper Herarchy
+		////Body
+		//model = glm::mat4(1);
+		//tmpSkiper = model = glm::translate(model, glm::vec3(2.2, 2.45f + trasXSkiper, 0.0f));
+		//model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
+		//model = glm::rotate(model, glm::radians(-rotPSkiper), glm::vec3(0.0f, 1.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//skiper.Draw(lightingShader);
+		////Right Fin
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXEnvi + 2.2f, posYEnvi + 2.45f, posZEnvi));
+		//model = glm::rotate(model, glm::radians(-rotPSkiper), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::translate(model, glm::vec3(0.4f, 0.45f + trasXSkiper, 0.25f));
+		//model = glm::rotate(model, glm::radians(-55.0f + rotZSkiperDer), glm::vec3(0.0f, 0.0f, 1.0f));
+		//model = glm::rotate(model, glm::radians(rotXSkiperDer), glm::vec3(1.0f, 0.0f, 0.0f));
+		//model = glm::rotate(model, glm::radians(rotYSkiperDer), glm::vec3(0.0f, 1.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//skiperADer.Draw(lightingShader);
+		////Left Fin
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXEnvi + 2.2f, posYEnvi + 2.45f, posZEnvi));
+		//model = glm::rotate(model, glm::radians(-rotPSkiper), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::translate(model, glm::vec3(-0.4f, 0.45f + trasXSkiper, 0.25f));
+		//model = glm::rotate(model, glm::radians(55.0f - rotZSkiperIzq), glm::vec3(0.0f, 0.0f, 1.0f));
+		//model = glm::rotate(model, glm::radians(rotXSkiperIzq), glm::vec3(1.0f, 0.0f, 0.0f));
+		//model = glm::rotate(model, glm::radians(rotYSkiperIzq), glm::vec3(0.0f, 1.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//skiperAIzq.Draw(lightingShader);
+		////Right Leg
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXEnvi + 2.2f, posYEnvi + 2.45f, posZEnvi));
+		//model = glm::rotate(model, glm::radians(-rotPSkiper), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::translate(model, glm::vec3(0.3f, -1.0f + trasXSkiper, 0.25f));
+		//model = glm::rotate(model, glm::radians(rotPaSkiper), glm::vec3(0.0f, 0.0f, 1.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//skiperPDer.Draw(lightingShader);
+		////Left Leg
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXEnvi + 2.2f, posYEnvi + 2.45f, posZEnvi));
+		//model = glm::rotate(model, glm::radians(-rotPSkiper), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::translate(model, glm::vec3(-0.3f, -1.0f + trasXSkiper, 0.25f));
+		//model = glm::rotate(model, glm::radians(rotPaSkiper), glm::vec3(0.0f, 0.0f, 1.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//skiperPIzq.Draw(lightingShader);
+
+		////Herpetario
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXHerp, posYHerp, posZHerp));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//HerpCueva.Draw(lightingShader);
 
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-		//Lion's water load
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXLeones, posYLeones + 0.01f, posZLeones));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.9f);
-		lionWater.Draw(lightingShader);
-		
-		//Cristales del domo
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
-		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
-		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
-		cristales.Draw(lightingShader);
+		////Lion's water load
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXLeones, posYLeones + 0.01f, posZLeones));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.9f);
+		//lionWater.Draw(lightingShader);
+		//
+		////Cristales del domo
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		//model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		//glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
+		//cristales.Draw(lightingShader);
 
-		//Foco de la lampara
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
-		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
-		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
-		foco.Draw(lightingShader);
+		////Foco de la lampara
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		//model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		//glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
+		//foco.Draw(lightingShader);
 
-		//Cristales Capi 
+		////Cristales Capi 
 
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
-		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
-		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
-		cristalCasa.Draw(lightingShader);
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
+		//model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		//glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
+		//cristalCasa.Draw(lightingShader);
 
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
-		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
-		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
-		cristalesBarda.Draw(lightingShader);
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
+		//model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		//glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
+		//cristalesBarda.Draw(lightingShader);
 
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
-		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
-		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.9f);
-		aguaTina.Draw(lightingShader);
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
+		//model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		//glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.9f);
+		//aguaTina.Draw(lightingShader);
 
 		//Penguin's water and cristals
-		model = glm::mat4(1);
+		/*model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXPenguin, posYPenguin, posZPenguin));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
@@ -972,139 +1289,139 @@ int main()
 		penguinWater.Draw(lightingShader);
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
-		penguinStreetGlass.Draw(lightingShader);
+		penguinStreetGlass.Draw(lightingShader);*/
 
-		//Herp Cristals
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXHerp, posYHerp, posZHerp));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
-		Pecera.Draw(lightingShader);
+		////Herp Cristals
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXHerp, posYHerp, posZHerp));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
+		//Pecera.Draw(lightingShader);
 
-		//Street Lights Glass
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXEnvi + 18.37, posYEnvi, posZEnvi + 13.749));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(23.328f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(22.765f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(25.244f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -27.836f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-25.244f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-22.765f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-23.328f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(5.917f, 0.0f, -33.791f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(15.261f, 0.0f, 13.236f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(19.309f, 0.0f, -11.99f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(16.506f, 0.0f, -10.745f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 28.337f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(25.731f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -28.815f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(5.954f, 0.0f, 48.91f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 17.65f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-2.127f, 0.0f, 25.519f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-19.989f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-23.605f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-12.759f, 0.0f, 13.078f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-15.098f, 0.0f, -8.4f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-25.412f, 0.0f, -11.59f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-33.812f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-3.402f, 0.0f, -17.119f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -19.245f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -21.053f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -28.389f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(30.197f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 28.283f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
-		enviStreetLightGlass.Draw(lightingShader);
+		////Street Lights Glass
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXEnvi + 18.37, posYEnvi, posZEnvi + 13.749));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(23.328f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(22.765f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(25.244f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, -27.836f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-25.244f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-22.765f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-23.328f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(5.917f, 0.0f, -33.791f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(15.261f, 0.0f, 13.236f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(19.309f, 0.0f, -11.99f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(16.506f, 0.0f, -10.745f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 28.337f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(25.731f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, -28.815f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(5.954f, 0.0f, 48.91f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 17.65f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-2.127f, 0.0f, 25.519f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-19.989f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-23.605f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-12.759f, 0.0f, 13.078f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-15.098f, 0.0f, -8.4f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-25.412f, 0.0f, -11.59f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-33.812f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-3.402f, 0.0f, -17.119f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, -19.245f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, -21.053f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, -28.389f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(30.197f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 28.283f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		//enviStreetLightGlass.Draw(lightingShader);
 
 
 		glDisable(GL_BLEND);
@@ -1131,65 +1448,65 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		pandaBambuPlant.Draw(lightingShader);
 
-		//Load transparency models for lions habitat
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXLeones, posYLeones, posZLeones));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
-		lionATree.Draw(lightingShader);
-		lionBTree.Draw(lightingShader);
-		lionCTree.Draw(lightingShader);
+		////Load transparency models for lions habitat
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXLeones, posYLeones, posZLeones));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
+		//lionATree.Draw(lightingShader);
+		//lionBTree.Draw(lightingShader);
+		//lionCTree.Draw(lightingShader);
 
-		//Draw enviroment trees
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXEnvi + 29.074, posYEnvi, posZEnvi - 5.928));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
-		enviTree.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-6.199f, 0.0f, 11.92f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
-		enviTree.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(18.715f, 0.0f, -4.291f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
-		enviTree.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(9.959f, 0.0f, -11.82f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
-		enviTree.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(7.22f, 0.0f, -25.218f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
-		enviTree.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-14.086f, 0.0f, -14.241f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
-		enviTree.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-15.015f, 0.0f, 17.801f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
-		enviTree.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(-8.259f, 0.0f, -38.84f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
-		enviTree.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(8.978f, 0.0f, 102.348f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
-		enviTree.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(12.712f, 0.0f, 13.818f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
-		enviTree.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(17.318f, 0.0f, -14.37f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
-		enviTree.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(12.528f, 0.0f, 12.896f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
-		enviTree.Draw(lightingShader);
+		////Draw enviroment trees
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXEnvi + 29.074, posYEnvi, posZEnvi - 5.928));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
+		//enviTree.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-6.199f, 0.0f, 11.92f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
+		//enviTree.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(18.715f, 0.0f, -4.291f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
+		//enviTree.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(9.959f, 0.0f, -11.82f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
+		//enviTree.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(7.22f, 0.0f, -25.218f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
+		//enviTree.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-14.086f, 0.0f, -14.241f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
+		//enviTree.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-15.015f, 0.0f, 17.801f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
+		//enviTree.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(-8.259f, 0.0f, -38.84f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
+		//enviTree.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(8.978f, 0.0f, 102.348f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
+		//enviTree.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(12.712f, 0.0f, 13.818f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
+		//enviTree.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(17.318f, 0.0f, -14.37f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
+		//enviTree.Draw(lightingShader);
+		//model = glm::translate(model, glm::vec3(12.528f, 0.0f, 12.896f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
+		//enviTree.Draw(lightingShader);
 
 		glEnable(GL_DEPTH_TEST);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
@@ -1363,7 +1680,119 @@ void animacionMariposa() {
 	}
 }
 
+void animacionPinguinos() {
+	if (animPenguin) {
+		if (route1) {
+			rotZSkiperDer += 0.2f;
+			rotZRicoIzq += 0.2f;
+			if (rotZSkiperDer > 90.0f) {
+				route1 = false;
+				route2 = true;
+			}
+		}
+		if (route2) {
+			if (rotZRicoIzq > 0.0f)
+				rotZRicoIzq -= 0.2f;
+			if (rotXSkiperDer < 90.0f) {
+				rotXSkiperDer += 0.2f;
+				rotXKowalskiDer += 0.2f;
+			}
+			if (rotZKowalskiDer < 90.0f)
+				rotZKowalskiDer += 0.2f;
+			rotPSkiper -= 0.2f;
+			if (trasXSkiper < 1.0)
+				trasXSkiper += 0.002;
+			if (rotPSkiper < -100.0f) {
+				route2 = false;
+				route3 = true;
+			}
+		}
+		if (route3) {
+			if (rotZRicoIzq < 90.0f)
+				rotZRicoIzq += 0.2f;
+			if (rotXRicoIzq < 90.0f) {
+				rotXRicoIzq += 0.2f;
+				rotXKowalskiDer -= 0.2f;
+			}
+			if (rotZKowalskiDer < 90.0f)
+				rotZKowalskiDer += 0.2f;
+			rotPSkiper -= 0.2f;
+			if (trasXSkiper > 0.0)
+				trasXSkiper -= 0.002;
+			if (rotPSkiper < -280.0f) {
+				route3 = false;
+				route4 = true;
+			}
+		}
+		if (route4) {
+			if (rotZSkiperIzq < 90.0f) {
+				rotZSkiperIzq += 0.2f;
+				rotZSkiperDer -= 0.2f;
+				rotZKowalskiDer -= 0.2;
+			}
+			if (rotXSkiperIzq < 90.0f) {
+				rotXSkiperIzq += 0.2f;
+				rotXKowalskiDer += 0.2f;
+			}
+			rotPSkiper += 0.2f;
+			if (rotPSkiper > -90.0f) {
+				route4 = false;
+				route5 = true;
+			}
+		}
+		if (route5) {
+			if (rotXSkiperDer > 0.0f) {
+				rotXSkiperDer -= 0.2f;
+				rotXSkiperIzq -= 0.2f;
+				rotXKowalskiDer -= 0.2f;
+				rotXRicoIzq -= 0.2f;
 
+			}
+			if (rotZSkiperDer < 90.0f)
+				rotZSkiperDer += 0.2f;
+			if (rotZKowalskiDer < 30.0f)
+				rotZKowalskiDer += 0.2f;
+			if (rotZRicoIzq > 30.0f)
+				rotZRicoIzq -= 0.2f;
+			if (rotYKowalskiDer < 45.0f) {
+				rotYRicoIzq -= 0.2f;
+				rotYKowalskiDer += 0.2f;
+				rotYSkiperDer += 0.2f;
+				rotYSkiperIzq -= 0.2f;
+			}
+			rotPSkiper += 0.2f;
+			if (rotPSkiper > 90.0f) {
+				route5 = false;
+				route6 = true;
+			}
+		}
+		if (route6) {
+			rotZSkiperDer -= 0.2f;
+			rotZSkiperIzq -= 0.2f;
+			if (rotZSkiperDer < 30.0) {
+				rotZKowalskiDer -= 0.2;
+				rotZRicoIzq -= 0.2;
+				if (rotYKowalskiDer > 0.0) {
+					rotYRicoIzq += 0.2f;
+					rotYKowalskiDer -= 0.2f;
+					rotYSkiperDer -= 0.2f;
+					rotYSkiperIzq += 0.2f;
+				}
+			}
+			if (rotZSkiperDer < 0.0) {
+				route6 = false;
+				route1 = true;
+				animPenguin = false;
+			}
+		}
+	}
+}
+
+void animacionPanda() {
+	if (animPanda) {
+
+	}
+}
 // Is called whenever a key is pressed/released via GLFW
 void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode)
 {
@@ -1420,6 +1849,12 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 		recorridoMariposa = !recorridoMariposa;
 		anim = !anim;
 	}
+
+	if (keys[GLFW_KEY_P])
+		animPenguin = !animPenguin;
+
+	if (keys[GLFW_KEY_O])
+		animPanda = !animPanda;
 }
 
 void MouseCallback(GLFWwindow *window, double xPos, double yPos)
