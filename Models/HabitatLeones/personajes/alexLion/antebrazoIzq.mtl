@@ -1,0 +1,59 @@
+newmtl Alex_mesh:mat0
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd tex_0063_0out.png
+Ni 1.55
+Ks 0.50 0.50 0.50
+Ns 225.00
+newmtl Alex_mesh:mat0_001
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd tex_0060_0out.png
+Ni 1.55
+Ks 0.50 0.50 0.50
+Ns 225.00
+newmtl Alex_mesh:mat0_002
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd tex_0059_0out.png
+Ni 1.55
+Ks 0.50 0.50 0.50
+Ns 225.00
+newmtl Alex_mesh:mat0_003
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd tex_0062_0out.png
+Ni 1.55
+Ks 0.50 0.50 0.50
+Ns 225.00
+newmtl Alex_mesh:mat0_004
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd tex_0061_0out.png
+Ni 1.55
+Ks 0.50 0.50 0.50
+Ns 225.00
+newmtl lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd fill.png
+Ni 1.00
+newmtl pasted__lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd fill.png
+Ni 1.00
