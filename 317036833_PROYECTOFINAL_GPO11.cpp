@@ -87,6 +87,7 @@ bool route7 = false;
 
 //Panda's animation variables
 bool animPanda = false;
+float pandaTrasY = 0.0f;
 
 float pandaBicepDerRotX = 0.0f;
 float pandaBicepDerRotY = 0.0f;
@@ -124,6 +125,7 @@ bool part5 = false;
 bool part6 = false;
 bool part7 = false;
 bool part8 = false;
+bool part9 = false;
 
 // Light attributes
 glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
@@ -588,6 +590,7 @@ int main()
 		DoMovement();
 		animacionMariposa();
 		animacionPinguinos();
+		animacionPanda();
 
 
 		// Clear the colorbuffer
@@ -973,7 +976,8 @@ int main()
 
 		//Panda habitat draw
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXPanda, posYPanda, posZPanda));
+		//model = glm::translate(model, glm::vec3(posXPanda, posYPanda, posZPanda));
+		model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		pandaFloor.Draw(lightingShader);
@@ -985,46 +989,47 @@ int main()
 		//Po herarchy
 		//Body draw
 		model = glm::mat4(1);
-		tmpPanda = model = glm::translate(model, glm::vec3(87.785f, 1.0f, -38.276f));
+		//tmpPanda = model = glm::translate(model, glm::vec3(87.785f, 1.0f, -38.276f));
+		tmpPanda = model = glm::translate(model, glm::vec3(0.0, 1.0f + pandaTrasY, 0.0f));
 		model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		pandaBody.Draw(lightingShader);
 		//Right Bicep Draw
-		model = glm::translate(tmpPanda, glm::vec3( -0.336f, 0.338f, -0.07f));
+		model = glm::translate(tmpPanda, glm::vec3( -0.4f, 0.35f, -0.07f));
 		model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
 		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaBicepDerRotX), glm::vec3(1.0f, 0.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaBicepDerRotY), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::rotate(model, glm::radians(55.0f - pandaBicepDerRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::rotate(model, glm::radians(45.0f - pandaBicepDerRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		pandaBicepDer.Draw(lightingShader);
 		//Right Forearm Draw
 		model = glm::translate(model, glm::vec3(-0.303f, -0.065f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaAntebrazoDerRotX), glm::vec3(1.0f, 0.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaAntebrazoDerRotY), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaAntebrazoDerRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		pandaAntebrazoDer.Draw(lightingShader);
 		//Right Hand Draw
 		model = glm::translate(model, glm::vec3(-0.47f, 0.011f, 0.014f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaManoDerRotX), glm::vec3(1.0f, 0.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaManoDerRotY), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaManoDerRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		pandaManoDer.Draw(lightingShader);
 		//Left Bicep Draw
-		model = glm::translate(tmpPanda, glm::vec3(0.351f, 0.338f, -0.065f));
+		model = glm::translate(tmpPanda, glm::vec3(0.45f, 0.35f, -0.065f));
 		model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
 		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaBicepIzqRotX), glm::vec3(1.0f, 0.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaBicepIzqRotY), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::rotate(model, glm::radians(-55.0f + pandaBicepIzqRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::rotate(model, glm::radians(-45.0f + pandaBicepIzqRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		pandaBicepIzq.Draw(lightingShader);
@@ -1038,12 +1043,12 @@ int main()
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		pandaAntebrazoIzq.Draw(lightingShader);
 		//Left Hand Draw
-		model = glm::translate(model, glm::vec3(0.433f, -0.015f, 0.029f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		model = glm::translate(model, glm::vec3(0.47f, -0.015f, 0.029f));
 		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaManoIzqRotX), glm::vec3(1.0f, 0.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaManoIzqRotY), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaManoIzqRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		pandaManoIzq.Draw(lightingShader);
 		//Right Leg Draw
@@ -1790,7 +1795,137 @@ void animacionPinguinos() {
 
 void animacionPanda() {
 	if (animPanda) {
+		if (part1) {
+			if (pandaBicepDerRotX < 15.0f) {
+				pandaBicepDerRotX += 0.09f;
+				pandaBicepIzqRotX += 0.09f;
+			}
+			pandaAntebrazoDerRotY += 0.09f;
+			pandaAntebrazoIzqRotY -= 0.09f;
+			if (pandaAntebrazoIzqRotY < -90.0f) {
+				part1 = false;
+				part2 = true;
+			}
+		}
+		if (part2) {
+			if (pandaAntebrazoDerRotY > 20.0f)
+				pandaAntebrazoDerRotY -= 0.09f;
+			if (pandaBicepDerRotX > 0.0f)
+				pandaBicepDerRotX -= 0.09f;
+			if (pandaBicepDerRotZ < 45.0f)
+				pandaBicepDerRotZ += 0.09f;
+			if (pandaManoDerRotZ > -60.0)
+				pandaManoDerRotZ -= 0.09f;
+			pandaBicepDerRotY += 0.09;
+			if (pandaBicepDerRotY > 100.0f) {
+				part2 = false;
+				part3 = true;
+			}
+		}
+		if (part3) {
+			if (pandaBicepDerRotZ > 0.0f)
+				pandaBicepDerRotZ -= 0.09f;
+			if (pandaManoDerRotZ < 0.0f)
+				pandaManoDerRotZ += 0.09f;
+			pandaBicepDerRotY -= 0.09f;
+			if (pandaBicepDerRotY < 0.0f) {
+				part3 = false;
+				part4 = true;
+			}
+		}
+		if (part4) {
+			if (pandaAntebrazoIzqRotY < -20.0f)
+				pandaAntebrazoIzqRotY += 0.09f;
+			if (pandaBicepIzqRotX > 0.0f)
+				pandaBicepIzqRotX -= 0.09f;
+			if (pandaBicepIzqRotZ < 45.0f)
+				pandaBicepIzqRotZ += 0.09f;
+			if (pandaManoIzqRotZ < 60.0)
+				pandaManoIzqRotZ += 0.09f;
+			pandaBicepIzqRotY -= 0.09;
+			if (pandaBicepIzqRotY < -100.0f) {
+				part4 = false;
+				part5 = true;
+			}
+		}
+		if (part5) {
+			if (pandaManoIzqRotZ > 0.0f)
+				pandaManoIzqRotZ -= 0.09;
+			if (pandaBicepIzqRotZ > 0.0f)
+				pandaBicepIzqRotZ -= 0.09f;
+			pandaBicepIzqRotY += 0.09f;
+			if (pandaBicepIzqRotY > 0.0) {
+				part5 = false;
+				part6 = true;
+			}
+		}
+		if (part6) {
+			if (pandaBicepDerRotX < 15.0f) {
+				pandaBicepDerRotX += 0.09f;
+				pandaBicepIzqRotX += 0.09f;
+			}
+			if (pandaBicepDerRotZ > -5.0f) {
+				pandaBicepIzqRotZ -= 0.09f;
+				pandaBicepDerRotZ -= 0.09f;
+			}
+			pandaAntebrazoDerRotY += 0.09f;
+			pandaAntebrazoIzqRotY -= 0.09f;
+			if (pandaAntebrazoDerRotY > 90.0f) {
+				part6 = false;
+				part7 = true;
+			}
+		}
+		if (part7) {
+			if (pandaAntebrazoDerRotY > 0.0f)
+				pandaAntebrazoDerRotY -= 0.15f;
+			if (pandaBicepDerRotZ > -25.0f)
+				pandaBicepDerRotZ -= 0.15f;
+			pandaBicepDerRotX -= 0.15f;
+			pandaManoDerRotX += 0.15f;
+			if (pandaManoDerRotZ > -60.0f)
+				pandaManoDerRotZ -= 0.15;
+			if (pandaBicepDerRotX < -90.0f) {
+				part7 = false;
+				part8 = true;
+			}
+		}
+		if (part8) {
+			if (pandaAntebrazoDerRotY < 90.0f)
+				pandaAntebrazoDerRotY += 0.15f;
+			if (pandaBicepDerRotZ < 0.0f)
+				pandaBicepDerRotZ += 0.15f;
+			pandaBicepDerRotX += 0.15f;
+			pandaManoDerRotX -= 0.15f;
+			if (pandaManoDerRotZ < 0.0f)
+				pandaManoDerRotZ += 0.15;
 
+			if (pandaAntebrazoIzqRotY < 0.0f)
+				pandaAntebrazoIzqRotY += 0.15f;
+			if (pandaBicepIzqRotZ > -25.0f)
+				pandaBicepIzqRotZ -= 0.15f;
+			pandaBicepIzqRotX -= 0.15f;
+			pandaManoIzqRotX += 0.15f;
+			pandaAntebrazoDerRotY -= 0.15;
+			if (pandaManoIzqRotZ < 60.0f)
+				pandaManoIzqRotZ += 0.15;
+			if (pandaBicepDerRotX > 0.0f) {
+				part8 = false;
+				part9 = true;
+			}
+		}
+		if (part9) {
+			if (pandaManoIzqRotZ > 0.0f)
+				pandaManoIzqRotZ -= 0.15;
+			if (pandaBicepIzqRotZ < 0.0f)
+				pandaBicepIzqRotZ += 0.15f;
+			pandaManoIzqRotX -= 0.15f;
+			pandaBicepIzqRotX += 0.15f;
+			if (pandaBicepIzqRotX > 0.0f) {
+				part9 = false;
+				part1 = true;
+				animPanda = false;
+			}
+		}
 	}
 }
 // Is called whenever a key is pressed/released via GLFW
