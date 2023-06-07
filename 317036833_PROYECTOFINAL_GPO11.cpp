@@ -954,6 +954,7 @@ int main()
 		enviLateralFence.Draw(lightingShader);
 		enviHerpFloor.Draw(lightingShader);
 
+		//Arbol 4
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXEnvi + 18.37, posYEnvi, posZEnvi + 13.749));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -2256,6 +2257,116 @@ void animacionPinguinos() {
 		}
 	}
 }
+void animCapibara() {
+	if (recorridoCapibara)
+	{
+		if (recorrido1) {
+			rotKit = -90.0f;
+			movXCapibara -= 0.001f;
+			if (movXCapibara < 11.0f)
+			{
+				recorrido2 = true;
+				recorrido1 = false;
+			}
+		}
+
+		if (recorrido2) {
+			rotKit = -45.0f;
+			movXCapibara -= 0.001f;
+			movZCapibara -= 0.001f;
+			if (movXCapibara < 9.5F) {
+				recorrido3 = true;
+				recorrido2 = false;
+			}
+		}
+
+		if (recorrido3) {
+			rotKit = -90.0f;
+			rotKitZ = -22.0f;
+			movXCapibara -= 0.001f;
+			movYCapibara += 0.404f * 0.001f;
+			if (movXCapibara < 5.5f) {
+				recorrido3 = false;
+				recorrido4 = true;
+			}
+		}
+
+		if (recorrido4) {
+			rotKitZ = 0.0f;
+			movXCapibara -= 0.001f;
+			if (movXCapibara < 3.0f) {
+				recorrido4 = false;
+				recorrido5 = true;
+			}
+		}
+
+		if (recorrido5) {
+			rotKit = 90.0f;
+			movXCapibara += 0.001f;
+			if (movXCapibara > 5.5f) {
+				recorrido5 = false;
+				recorrido6 = true;
+			}
+		}
+
+		if (recorrido6) {
+			rotKitZ = 22.0f;
+			movXCapibara += 0.001f;
+			movYCapibara -= 0.404f * 0.001f;
+			if (movXCapibara > 9.5f) {
+				recorrido6 = false;
+				recorrido7 = true;
+			}
+		}
+
+		if (recorrido7) {
+			rotKitZ = 0.0f;
+			rotKit = 135.0f;
+			movXCapibara += 0.001f;
+			movZCapibara += 0.001f;
+			if (movXCapibara > 11.0F) {
+				recorrido8 = true;
+				recorrido7 = false;
+			}
+		}
+		
+		if (recorrido8) {
+			rotKit = 90.0f;
+			movXCapibara += 0.001f;
+			if (movXCapibara > 13.5f)
+			{
+				recorrido1 = true;
+				recorrido8 = false;
+			}
+		}
+
+		if (animPatasDel)
+		{
+			if (pataTrasera < 15) {
+				pataTrasera += 0.1;
+				pataDelantera -= 0.1;
+			}
+			else {
+				animPatasTras = true;
+				animPatasDel = false;
+			}
+		}
+
+		if (animPatasTras)
+		{
+			if (pataTrasera > 0) {
+				pataTrasera -= 0.1;
+				pataDelantera += 0.1;
+			}
+			else {
+				animPatasTras = false;
+				animPatasDel = true;
+			}
+		}
+
+	}
+}
+
 
 void animCapibara() {
 	if (recorridoCapibara)
@@ -2564,6 +2675,7 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 
 	if (keys[GLFW_KEY_O])
 		animPanda = !animPanda;
+		
 	if (keys[GLFW_KEY_C])
 	{
 		recorridoCapibara = true;
