@@ -1,0 +1,812 @@
+newmtl Bank3:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank3:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank4:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank4:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank5:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank5:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank6:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank6:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank8:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank8:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank10:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank10:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank11:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank11:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank12:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank12:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank13:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank13:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank14:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank14:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank15:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank15:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank16:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank16:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank17:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank17:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank19:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank19:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank20:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank20:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank21:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank21:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank22:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank22:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank23:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank23:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank24:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank24:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank25:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank25:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank26:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank26:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank27:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank27:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank28:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank28:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank29:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank29:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank30:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank30:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank31:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank31:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank32:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank32:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank33:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank33:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank34:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank34:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank35:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank35:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank36:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank36:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank37:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank37:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank38:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank38:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank39:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank39:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank40:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank40:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank41:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank41:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl Bank42:pasted__phong14SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_demir.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapResting.png
+Ns 18.00
+newmtl Bank42:pasted__phong15SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bank_tahta.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks SpecularMapSeat.png
+Ns 18.00
+newmtl GrassPlane:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Grass_BaseColor.jpg
+bump  -bm 1 Grass_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Grass_Specular.jpg
+Ns 18.00
+newmtl tree_maple1:Tree_0SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.20 0.20 0.20
+Tf 1.00 1.00 1.00
+map_Kd bark02.png
+Ni 1.00
+Ks 0.20 0.20 0.20
+Ns 18.00
+newmtl tree_maple1:Tree_1SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd leaf_maple.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl tree_maple3:Tree_0SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.20 0.20 0.20
+Tf 1.00 1.00 1.00
+map_Kd bark02.png
+Ni 1.00
+Ks 0.20 0.20 0.20
+Ns 18.00
+newmtl tree_maple3:Tree_1SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd leaf_maple.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl tree_maple4:Tree_0SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.20 0.20 0.20
+Tf 1.00 1.00 1.00
+map_Kd bark02.png
+Ni 1.00
+Ks 0.20 0.20 0.20
+Ns 18.00
+newmtl tree_maple4:Tree_1SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd leaf_maple.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl wooden_gate:Mat_0
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd 5.png
+Ni 1.00
