@@ -58,6 +58,7 @@ bool anim = false;
 bool anim2 = false;
 bool direccion = true;
 bool recorridoMariposa = false;
+
 //Penguin Animation variables
 float initRotation = 90.0f;
 float rotPaSkiper = 0.0f;
@@ -68,11 +69,10 @@ float rotXSkiperDer = 0.0f;
 float rotZSkiperDer = 0.0f;
 float rotYSkiperDer = 0.0f;
 float rotPSkiper = 90.0f;
-float trasXSkiper = 0.0f;
+float trasYSkiper = 0.0f;
 float rotXKowalskiDer = 0.0f;
 float rotZKowalskiDer = 0.0f;
 float rotYKowalskiDer = 0.0f;
-float rotCRico = 0.0f;
 float rotXRicoIzq = 0.0f;
 float rotZRicoIzq = 0.0f;
 float rotYRicoIzq = 0.0f;
@@ -87,7 +87,6 @@ bool route7 = false;
 
 //Panda's animation variables
 bool animPanda = false;
-float pandaTrasY = 0.0f;
 
 float pandaBicepDerRotX = 0.0f;
 float pandaBicepDerRotY = 0.0f;
@@ -1298,7 +1297,7 @@ int main()
 		//Skiper Herarchy
 		//Body
 		model = glm::mat4(1);
-		tmpSkiper = model = glm::translate(model, glm::vec3(2.2, 2.45f + trasXSkiper, 0.0f));
+		tmpSkiper = model = glm::translate(model, glm::vec3(2.2, 2.45f + trasYSkiper, 0.0f));
 		model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
 		model = glm::rotate(model, glm::radians(-rotPSkiper), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -1308,7 +1307,7 @@ int main()
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXEnvi + 2.2f, posYEnvi + 2.45f, posZEnvi));
 		model = glm::rotate(model, glm::radians(-rotPSkiper), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::translate(model, glm::vec3(0.4f, 0.45f + trasXSkiper, 0.25f));
+		model = glm::translate(model, glm::vec3(0.4f, 0.45f + trasYSkiper, 0.25f));
 		model = glm::rotate(model, glm::radians(-55.0f + rotZSkiperDer), glm::vec3(0.0f, 0.0f, 1.0f));
 		model = glm::rotate(model, glm::radians(rotXSkiperDer), glm::vec3(1.0f, 0.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(rotYSkiperDer), glm::vec3(0.0f, 1.0f, 0.0f));
@@ -1319,7 +1318,7 @@ int main()
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXEnvi + 2.2f, posYEnvi + 2.45f, posZEnvi));
 		model = glm::rotate(model, glm::radians(-rotPSkiper), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::translate(model, glm::vec3(-0.4f, 0.45f + trasXSkiper, 0.25f));
+		model = glm::translate(model, glm::vec3(-0.4f, 0.45f + trasYSkiper, 0.25f));
 		model = glm::rotate(model, glm::radians(55.0f - rotZSkiperIzq), glm::vec3(0.0f, 0.0f, 1.0f));
 		model = glm::rotate(model, glm::radians(rotXSkiperIzq), glm::vec3(1.0f, 0.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(rotYSkiperIzq), glm::vec3(0.0f, 1.0f, 0.0f));
@@ -1330,7 +1329,7 @@ int main()
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXEnvi + 2.2f, posYEnvi + 2.45f, posZEnvi));
 		model = glm::rotate(model, glm::radians(-rotPSkiper), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::translate(model, glm::vec3(0.3f, -1.0f + trasXSkiper, 0.25f));
+		model = glm::translate(model, glm::vec3(0.3f, -1.0f + trasYSkiper, 0.25f));
 		model = glm::rotate(model, glm::radians(rotPaSkiper), glm::vec3(0.0f, 0.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
@@ -1339,7 +1338,7 @@ int main()
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXEnvi + 2.2f, posYEnvi + 2.45f, posZEnvi));
 		model = glm::rotate(model, glm::radians(-rotPSkiper), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::translate(model, glm::vec3(-0.3f, -1.0f + trasXSkiper, 0.25f));
+		model = glm::translate(model, glm::vec3(-0.3f, -1.0f + trasYSkiper, 0.25f));
 		model = glm::rotate(model, glm::radians(rotPaSkiper), glm::vec3(0.0f, 0.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
@@ -1848,8 +1847,8 @@ void animacionPinguinos() {
 			if (rotZKowalskiDer < 90.0f)
 				rotZKowalskiDer += 0.2f;
 			rotPSkiper -= 0.2f;
-			if (trasXSkiper < 1.0)
-				trasXSkiper += 0.002;
+			if (trasYSkiper < 1.0)
+				trasYSkiper += 0.002;
 			if (rotPSkiper < -100.0f) {
 				route2 = false;
 				route3 = true;
@@ -1865,8 +1864,8 @@ void animacionPinguinos() {
 			if (rotZKowalskiDer < 90.0f)
 				rotZKowalskiDer += 0.2f;
 			rotPSkiper -= 0.2f;
-			if (trasXSkiper > 0.0)
-				trasXSkiper -= 0.002;
+			if (trasYSkiper > 0.0)
+				trasYSkiper -= 0.002;
 			if (rotPSkiper < -280.0f) {
 				route3 = false;
 				route4 = true;
