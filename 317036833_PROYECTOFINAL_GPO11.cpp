@@ -335,14 +335,12 @@ int main()
 	Model tina((char*)"Models/Capibaras/tina/Tina.obj");
 	Model aguaTina((char*)"Models/Capibaras/tina/Agua.obj");
 	
-	//Lion's habitat model load
-	////Capybara 
-	//Model piernaDelanDer((char*)"Models/Capibaras/capibara/piernaDD.obj");
-	//Model piernaDelanIzq((char*)"Models/Capibaras/capibara/piernaDI.obj");
-	//Model piernaTraseDer((char*)"Models/Capibaras/capibara/piernaTD.obj");
-	//Model piernaTraseIzq((char*)"Models/Capibaras/capibara/piernaTI.obj");
-	//Model capibara((char*)"Models/Capibaras/capibara/cuerpo.obj");
-
+	//Capybara 
+	Model piernaDelanDer((char*)"Models/Capibaras/capibara/piernaDD.obj");
+	Model piernaDelanIzq((char*)"Models/Capibaras/capibara/piernaDI.obj");
+	Model piernaTraseDer((char*)"Models/Capibaras/capibara/piernaTD.obj");
+	Model piernaTraseIzq((char*)"Models/Capibaras/capibara/piernaTI.obj");
+	Model capibara((char*)"Models/Capibaras/capibara/cuerpo.obj");
 
 	//Lion's habitat model declarations
 	Model lionFloor((char*)"Models/HabitatLeones/FloorModel/FloorPlane.obj");
@@ -798,134 +796,135 @@ int main()
 		estructura.Draw(lightingShader);
 		banca.Draw(lightingShader);
 		
-		//////Capybara anim
-
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
 		model = glm::translate(model, glm::vec3(0.2f, 0.0f, 0.2f));
 		model = glm::rotate(model, glm::radians(-180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		banca.Draw(lightingShader);*/
-		//model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
-		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		//model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
-		//model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//capibara.Draw(lightingShader);
+		banca.Draw(lightingShader);
 
-		//model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
-		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		//model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
-		//model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
-		//model = glm::rotate(model, glm::radians(pataDelantera), glm::vec3(1.0f, 0.0f, 0.0f));
-		//model = glm::translate(model, glm::vec3(-0.083, -0.158, 0.157));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//piernaDelanDer.Draw(lightingShader);
+		////Capybara anim
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		capibara.Draw(lightingShader);
 
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pataDelantera), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(-0.083, -0.158, 0.157));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		piernaDelanDer.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pataDelantera), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.102, -0.144, 0.165));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		piernaDelanIzq.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		model = glm::rotate(model, glm::radians(pataTrasera), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.086, -0.097, -0.349));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		piernaTraseIzq.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		model = glm::rotate(model, glm::radians(pataTrasera), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(-0.095, -0.112, -0.355));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		piernaTraseDer.Draw(lightingShader);
+	
 		//Arbol 1
-		//model = glm::mat4(1);
-		////model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
-		//model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
-		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		//model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
-		//model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
-		//model = glm::rotate(model, glm::radians(pataDelantera), glm::vec3(1.0f, 0.0f, 0.0f));
-		//model = glm::translate(model, glm::vec3(0.102, -0.144, 0.165));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//piernaDelanIzq.Draw(lightingShader);
-
-		//model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
-		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		//model = glm::rotate(model, glm::radians(pataTrasera), glm::vec3(0.0f, 0.0f, 1.0f));
-		//model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
-		//model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
-		//model = glm::translate(model, glm::vec3(0.086, -0.097, -0.349));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//piernaTraseIzq.Draw(lightingShader);
-
-		//model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
-		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		//model = glm::rotate(model, glm::radians(pataTrasera), glm::vec3(0.0f, 0.0f, 1.0f));
-		//model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
-		//model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
-		//model = glm::translate(model, glm::vec3(-0.095, -0.112, -0.355));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//piernaTraseDer.Draw(lightingShader);
-
-		//model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
-		//arbol.Draw(lightingShader);
+		 model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
+		arbol.Draw(lightingShader);
 
 		//Arbol 2
-		//model = glm::mat4(1);
-		//model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
-		/*model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
 		model = glm::translate(model, glm::vec3(5.3f, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
-		arbol.Draw(lightingShader);*/
+		arbol.Draw(lightingShader);
 
-		////Cuerpo de la mariposa
-		//model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
-		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		//model = glm::translate(model, glm::vec3(movKitX, 4.0f, movKitZ));
-		//model = glm::rotate(model, glm::radians(rotMariposa), glm::vec3(0.0f, 1.0f, 0.0));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//cuerpoMari.Draw(lightingShader);
+		//Cuerpo de la mariposa
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		model = glm::translate(model, glm::vec3(movKitX, 4.0f, movKitZ));
+		model = glm::rotate(model, glm::radians(rotMariposa), glm::vec3(0.0f, 1.0f, 0.0));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		cuerpoMari.Draw(lightingShader);
 
-		////Cuerpo de la mariposa 2
-		//model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
-		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		//tmp2 = model = glm::translate(model, glm::vec3(1.6, 2.0f, 0.178));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//cuerpoMari.Draw(lightingShader);
+		//Cuerpo de la mariposa 2
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		tmp2 = model = glm::translate(model, glm::vec3(1.6, 2.0f, 0.178));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		cuerpoMari.Draw(lightingShader);
 
-		////Ala izquierda de la mariposa
-		//model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
-		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		//model = glm::translate(model, glm::vec3(movKitX + 0.001f, 4.0f, movKitZ));
-		//model = glm::rotate(model, glm::radians(rotMariposa), glm::vec3(0.0f, 1.0f, 0.0));
-		//model = glm::rotate(model, glm::radians(rot1), glm::vec3(0.0f, 0.0f, 1.0f));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
-		//alaIzq.Draw(lightingShader);
+		//Ala izquierda de la mariposa
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		model = glm::translate(model, glm::vec3(movKitX + 0.001f, 4.0f, movKitZ));
+		model = glm::rotate(model, glm::radians(rotMariposa), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::rotate(model, glm::radians(rot1), glm::vec3(0.0f, 0.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
+		alaIzq.Draw(lightingShader);
 
-		////Ala derecha de la mariposa
-		//model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
-		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		//model = glm::translate(model, glm::vec3(movKitX-0.001f, 4.0f, movKitZ));
-		//model = glm::rotate(model, glm::radians(rotMariposa), glm::vec3(0.0f, 1.0f, 0.0));
-		//model = glm::rotate(model, glm::radians(rot2), glm::vec3(0.0f, 0.0f, -1.0f));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
-		//alaDer.Draw(lightingShader);
+		//Ala derecha de la mariposa
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		model = glm::translate(model, glm::vec3(movKitX-0.001f, 4.0f, movKitZ));
+		model = glm::rotate(model, glm::radians(rotMariposa), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::rotate(model, glm::radians(rot2), glm::vec3(0.0f, 0.0f, -1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
+		alaDer.Draw(lightingShader);
 
-		////Ala izquierda de la mariposa 2
-		//model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
-		//model = glm::translate(tmp2, glm::vec3(0.001f, 0.0f, 0.0f));
-		//model = glm::rotate(model, glm::radians(rot1), glm::vec3(0.0f, 0.0f, 1.0f));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
-		//alaIzq.Draw(lightingShader);
+		//Ala izquierda de la mariposa 2
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		model = glm::translate(tmp2, glm::vec3(0.001f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rot1), glm::vec3(0.0f, 0.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
+		alaIzq.Draw(lightingShader);
 
-		////Ala derecha de la mariposa 2
-		//model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
-		//model = glm::translate(tmp2, glm::vec3(- 0.001f, 0.0f, 0.0f));
-		//model = glm::rotate(model, glm::radians(rot2), glm::vec3(0.0f, 0.0f, -1.0f));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
-		//alaDer.Draw(lightingShader);
+		//Ala derecha de la mariposa 2
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		model = glm::translate(tmp2, glm::vec3(- 0.001f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rot2), glm::vec3(0.0f, 0.0f, -1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
+		alaDer.Draw(lightingShader);
 
 		//Enviroment Draw
 		model = glm::mat4(1);
@@ -1196,57 +1195,56 @@ int main()
 		simba.Draw(lightingShader);
 		scar.Draw(lightingShader);
 
-		////Lion animation
-		//model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(posXLeones, posYLeones, posZLeones));
-		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		//tmp = model = glm::translate(model, glm::vec3(0.0f, 0.897f, 0.0f));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//bodyLion.Draw(lightingShader);
+		//Lion animation
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXLeones, posYLeones, posZLeones));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		tmp = model = glm::translate(model, glm::vec3(0.0f, 0.897f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		bodyLion.Draw(lightingShader);
 
-		//model = glm::translate(tmp, glm::vec3(0.0f, 0.3f, 0.0f));
-		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		//model = glm::rotate(model, glm::radians(rotCabeza), glm::vec3(0.0f, 1.0f, 0.0f));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//headLion.Draw(lightingShader);
+		model = glm::translate(tmp, glm::vec3(0.0f, 0.3f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		model = glm::rotate(model, glm::radians(rotCabeza), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		headLion.Draw(lightingShader);
 
-		//model = glm::mat4(1);
-		//model = glm::translate(tmp, glm::vec3(0.187f, 0.054f, -0.011f));
-		//model = glm::rotate(model, glm::radians(rotBicepDer), glm::vec3(1.0f, 0.0f, 0.0f));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//bicepDer.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(tmp, glm::vec3(0.187f, 0.054f, -0.011f));
+		model = glm::rotate(model, glm::radians(rotBicepDer), glm::vec3(1.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		bicepDer.Draw(lightingShader);
 
-		//model = glm::translate(model, glm::vec3(0.046f, -0.182f, -0.068f));
-		//model = glm::rotate(model, glm::radians(rotAnteDer), glm::vec3(1.0f, 0.0f, 0.0f));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//antebrazoDer.Draw(lightingShader);
+		model = glm::translate(model, glm::vec3(0.046f, -0.182f, -0.068f));
+		model = glm::rotate(model, glm::radians(rotAnteDer), glm::vec3(1.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		antebrazoDer.Draw(lightingShader);
 
-		//model = glm::translate(model, glm::vec3(0.026f, -0.2f, 0.048f));
-		//model = glm::rotate(model, glm::radians(rotManoDer), glm::vec3(0.0f, 1.0f, 0.0f));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//manoDer.Draw(lightingShader);
+		model = glm::translate(model, glm::vec3(0.026f, -0.2f, 0.048f));
+		model = glm::rotate(model, glm::radians(rotManoDer), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		manoDer.Draw(lightingShader);
 
-		//model = glm::mat4(1);
-		//model = glm::translate(tmp, glm::vec3(-0.172f, 0.054f, -0.011f));
-		//model = glm::rotate(model, glm::radians(rotBicepIzq), glm::vec3(1.0f, 0.0f, 0.0f));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//bicepIzq.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(tmp, glm::vec3(-0.172f, 0.054f, -0.011f));
+		model = glm::rotate(model, glm::radians(rotBicepIzq), glm::vec3(1.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		bicepIzq.Draw(lightingShader);
 
-		//model = glm::translate(model, glm::vec3(-0.068f, -0.2f, -0.026f));
-		//model = glm::rotate(model, glm::radians(rotAnteIzq), glm::vec3(1.0f, 0.0f, 0.0f));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//antebrazoIzq.Draw(lightingShader);
+		model = glm::translate(model, glm::vec3(-0.068f, -0.2f, -0.026f));
+		model = glm::rotate(model, glm::radians(rotAnteIzq), glm::vec3(1.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		antebrazoIzq.Draw(lightingShader);
 
-		//model = glm::translate(model, glm::vec3(-0.039f, -0.193f, 0.03f));
-		//model = glm::rotate(model, glm::radians(rotManoIzq), glm::vec3(0.0f, 1.0f, 0.0f));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//manoIzq.Draw(lightingShader);
+		model = glm::translate(model, glm::vec3(-0.039f, -0.193f, 0.03f));
+		model = glm::rotate(model, glm::radians(rotManoIzq), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		manoIzq.Draw(lightingShader);
 
 		//Panda habitat draw
 		//Herpetario
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXPanda, posYPanda, posZPanda));
-		model = glm::translate(model, glm::vec3(posXHerp, posYHerp, posZHerp));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		pandaFloor.Draw(lightingShader);
@@ -1257,14 +1255,6 @@ int main()
 
 		//Po herarchy
 		//Body draw
-		HerpCueva.Draw(lightingShader);
-		mushu.Draw(lightingShader);
-		randall.Draw(lightingShader);
-		troncos1Herp.Draw(lightingShader);
-		troncos2Herp.Draw(lightingShader);
-		rocaHerp.Draw(lightingShader);
-
-		//crocodile herpetary
 		model = glm::mat4(1);
 		tmpPanda = model = glm::translate(model, glm::vec3(87.785f, 1.0f, -38.276f));
 		model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
@@ -1324,8 +1314,7 @@ int main()
 		model = glm::rotate(model, glm::radians(pandaManoIzqRotX), glm::vec3(1.0f, 0.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaManoIzqRotY), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaManoIzqRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
-		model = glm::translate(model, glm::vec3(posXHerp + 1.706, posYHerp + 1.83 + movYCoco, posZHerp - 0.968 + movCoco));
-		model = glm::rotate(model, glm::radians(rotYCoco), glm::vec3(1.0f, 0.0f, 0.0f));
+		
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		pandaManoIzq.Draw(lightingShader);
@@ -1336,10 +1325,6 @@ int main()
 		model = glm::rotate(model, glm::radians(pandaPiernaDerRotX), glm::vec3(1.0f, 0.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaPiernaDerRotY), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaPiernaDerRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
-		cuerpoCoco.Draw(lightingShader);
-
-		model = glm::translate(model, glm::vec3(0.028, -0.039, -0.87));
-		model = glm::rotate(model, glm::radians(rotColaCo), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		pandaPiernaDer.Draw(lightingShader);
@@ -1350,23 +1335,15 @@ int main()
 		model = glm::rotate(model, glm::radians(pandaPiernaIzqRotX), glm::vec3(1.0f, 0.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaPiernaIzqRotY), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaPiernaIzqRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
-		colaCoco.Draw(lightingShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXHerp + 1.706 + 0.299, posYHerp + 1.83 - 0.011 + movYCoco, posZHerp - 0.968 + movCoco - 0.089));
-		model = glm::rotate(model, glm::radians(rotYCoco), glm::vec3(1.0f, 0.0f, 0.0f));
-		model = glm::rotate(model, glm::radians(rotPatasCo), glm::vec3(1.0f, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		pandaPiernaIzq.Draw(lightingShader);
-		pataIzqCoco.Draw(lightingShader);
 
 		//Penguin habitat draw
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXPenguin, posYPenguin, posZPenguin));
-		model = glm::translate(model, glm::vec3(posXHerp + 1.706 - 0.247, posYHerp + 1.83 + 0.004 + movYCoco, posZHerp - 0.968 + movCoco - 0.067));
-		model = glm::rotate(model, glm::radians(rotYCoco), glm::vec3(1.0f, 0.0f, 0.0f));
-		model = glm::rotate(model, glm::radians(rotPatasCo), glm::vec3(1.0f, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		penguinCenter.Draw(lightingShader);
@@ -1387,7 +1364,6 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "transparencia"), 0.0);
 		penguinStreet.Draw(lightingShader);
-		pataDerCoco.Draw(lightingShader);
 
 		//Penguins Draw
 		//Cabo Herarchy
@@ -1527,8 +1503,47 @@ int main()
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXHerp, posYHerp, posZHerp));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		HerpCueva.Draw(lightingShader);
+		mushu.Draw(lightingShader);
+		randall.Draw(lightingShader);
+		troncos1Herp.Draw(lightingShader);
+		troncos2Herp.Draw(lightingShader);
+		rocaHerp.Draw(lightingShader);
+
+		//Cocodrile herpetary
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXHerp + 1.706, posYHerp + 1.83 + movYCoco, posZHerp - 0.968 + movCoco));
+		model = glm::rotate(model, glm::radians(rotYCoco), glm::vec3(1.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		cuerpoCoco.Draw(lightingShader);
+
+		model = glm::translate(model, glm::vec3(0.028, -0.039, -0.87));
+		model = glm::rotate(model, glm::radians(rotColaCo), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		colaCoco.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXHerp + 1.706 + 0.299, posYHerp + 1.83 - 0.011 + movYCoco, posZHerp - 0.968 + movCoco - 0.089));
+		model = glm::rotate(model, glm::radians(rotYCoco), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotPatasCo), glm::vec3(1.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		pataIzqCoco.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXHerp + 1.706 - 0.247, posYHerp + 1.83 + 0.004 + movYCoco, posZHerp - 0.968 + movCoco - 0.067));
+		model = glm::rotate(model, glm::radians(rotYCoco), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotPatasCo), glm::vec3(1.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
+		pataDerCoco.Draw(lightingShader);
+
+
+
 
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
