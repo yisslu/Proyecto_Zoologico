@@ -1764,8 +1764,6 @@ int main()
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		enviStreetLightGlass.Draw(lightingShader);
 
-
-
 		glDisable(GL_BLEND);
 
 		//Load transparency models for panda habitat
@@ -1800,7 +1798,6 @@ int main()
 		lionCTree.Draw(lightingShader);
 
 		//Draw enviroment trees
-		////Load transparency models for herpetary
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXEnvi + 29.074, posYEnvi, posZEnvi - 5.928));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -1847,10 +1844,15 @@ int main()
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
 		enviTree.Draw(lightingShader);
 		model = glm::translate(model, glm::vec3(12.528f, 0.0f, 12.896f));
-		model = glm::translate(model, glm::vec3(posXHerp, posYHerp, posZHerp));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
 		enviTree.Draw(lightingShader);
+
+		//Load transparency models for herpetary
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXHerp, posYHerp, posZHerp));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
 		planta1Herp.Draw(lightingShader);
 		planta2Herp.Draw(lightingShader);
 
@@ -2047,14 +2049,6 @@ void animacionPinguinos() {
 			if (rotXSkiperDer < 90.0f) {
 				rotXSkiperDer += 0.2f;
 				rotXKowalskiDer += 0.2f;
-void animCapibara() {
-	if (recorridoCapibara)
-	{
-		if (animPatasDel)
-		{
-			if (pataTrasera < 15) {
-				pataTrasera += 0.1;
-				pataDelantera -= 0.1;
 			}
 			if (rotZKowalskiDer < 90.0f)
 				rotZKowalskiDer += 0.2f;
@@ -2064,9 +2058,6 @@ void animCapibara() {
 			if (rotPSkiper < -100.0f) {
 				route2 = false;
 				route3 = true;
-			else {
-				animPatasTras = true;
-				animPatasDel = false;
 			}
 		}
 		if (route3) {
@@ -2075,12 +2066,6 @@ void animCapibara() {
 			if (rotXRicoIzq < 90.0f) {
 				rotXRicoIzq += 0.2f;
 				rotXKowalskiDer -= 0.2f;
-
-		if (animPatasTras)
-		{
-			if (pataTrasera > 0) {
-				pataTrasera -= 0.1;
-				pataDelantera += 0.1;
 			}
 			if (rotZKowalskiDer < 90.0f)
 				rotZKowalskiDer += 0.2f;
@@ -2090,9 +2075,6 @@ void animCapibara() {
 			if (rotPSkiper < -280.0f) {
 				route3 = false;
 				route4 = true;
-			else {
-				animPatasTras = false;
-				animPatasDel = true;
 			}
 		}
 		if (route4) {
@@ -2100,42 +2082,15 @@ void animCapibara() {
 				rotZSkiperIzq += 0.2f;
 				rotZSkiperDer -= 0.2f;
 				rotZKowalskiDer -= 0.2;
-
-		if (recorrido1) {
-			rotKit = -90.0f;
-			movXCapibara -= 0.001f;
-			if (movXCapibara < 11.0f)
-			{
-				recorrido2 = true;
-				recorrido1 = false;
 			}
 			if (rotXSkiperIzq < 90.0f) {
 				rotXSkiperIzq += 0.2f;
 				rotXKowalskiDer += 0.2f;
-		}
-
-		if (recorrido2) {
-			rotKit = -45.0f;
-			movXCapibara -= 0.001f;
-			movZCapibara -= 0.001f;
-			if (movXCapibara < 9.5F) {
-				recorrido3 = true;
-				recorrido2 = false;
 			}
 			rotPSkiper += 0.2f;
 			if (rotPSkiper > -90.0f) {
 				route4 = false;
 				route5 = true;
-		}
-
-		if (recorrido3) {
-			rotKit = -90.0f;
-			rotKitZ = -22.0f;
-			movXCapibara -= 0.001f;
-			movYCapibara += 0.404f * 0.001f;
-			if (movXCapibara < 5.5f) {
-				recorrido3 = false;
-				recorrido4 = true;
 			}
 		}
 		if (route5) {
@@ -2144,13 +2099,6 @@ void animCapibara() {
 				rotXSkiperIzq -= 0.2f;
 				rotXKowalskiDer -= 0.2f;
 				rotXRicoIzq -= 0.2f;
-
-		if (recorrido4) {
-			rotKitZ = 0.0f;
-			movXCapibara -= 0.001f;
-			if (movXCapibara < 3.0f) {
-				recorrido4 = false;
-				recorrido5 = true;
 			}
 			if (rotZSkiperDer < 90.0f)
 				rotZSkiperDer += 0.2f;
@@ -2163,8 +2111,95 @@ void animCapibara() {
 				rotYKowalskiDer += 0.2f;
 				rotYSkiperDer += 0.2f;
 				rotYSkiperIzq -= 0.2f;
+			}
+			rotPSkiper += 0.2f;
+			if (rotPSkiper > 90.0f) {
+				route5 = false;
+				route6 = true;
+			}
+		}
+		if (route6) {
+			rotZSkiperDer -= 0.2f;
+			rotZSkiperIzq -= 0.2f;
+			if (rotZSkiperDer < 30.0) {
+				rotZKowalskiDer -= 0.2;
+				rotZRicoIzq -= 0.2;
+			}
+			if (rotYKowalskiDer > 0.0) {
+				rotYRicoIzq += 0.2f;
+				rotYKowalskiDer -= 0.2f;
+				rotYSkiperDer -= 0.2f;
+				rotYSkiperIzq += 0.2f;
+			}
+			if (rotZSkiperDer < 0.0) {
+				route6 = false;
+				route1 = true;
+				animPenguin = false;
+			}
 		}
 
+	}
+}
+
+
+void animCapibara() {
+	if (recorridoCapibara) {
+		if (animPatasDel) {
+			if (pataTrasera < 15) {
+				pataTrasera += 0.1;
+				pataDelantera -= 0.1;
+			}
+			else {
+				animPatasTras = true;
+				animPatasDel = false;
+			}
+		}
+		if (animPatasTras) {
+			if (pataTrasera > 0) {
+				pataTrasera -= 0.1;
+				pataDelantera += 0.1;
+			}
+			else {
+				animPatasTras = false;
+				animPatasDel = true;
+			}
+		}
+		if (recorrido1) {
+			rotKit = -90.0f;
+			movXCapibara -= 0.001f;
+			if (movXCapibara < 11.0f)
+			{
+				recorrido2 = true;
+				recorrido1 = false;
+			}
+		}
+		if (recorrido2) {
+			rotKit = -45.0f;
+			movXCapibara -= 0.001f;
+			movZCapibara -= 0.001f;
+			if (movXCapibara < 9.5F) {
+				recorrido3 = true;
+				recorrido2 = false;
+			};
+		}
+		if (recorrido3) {
+			rotKit = -90.0f;
+			rotKitZ = -22.0f;
+			movXCapibara -= 0.001f;
+			movYCapibara += 0.404f * 0.001f;
+			if (movXCapibara < 5.5f) {
+				recorrido3 = false;
+				recorrido4 = true;
+			}
+		}
+		if (recorrido4) {
+			rotKitZ = 0.0f;
+			movXCapibara -= 0.001f;
+			if (movXCapibara < 3.0f) {
+				recorrido4 = false;
+				recorrido5 = true;
+			}
+		}
 		if (recorrido5) {
 			rotKit = 90.0f;
 			movXCapibara += 0.001f;
@@ -2172,12 +2207,7 @@ void animCapibara() {
 				recorrido5 = false;
 				recorrido6 = true;
 			}
-			rotPSkiper += 0.2f;
-			if (rotPSkiper > 90.0f) {
-				route5 = false;
-				route6 = true;
 		}
-
 		if (recorrido6) {
 			rotKitZ = 22.0f;
 			movXCapibara += 0.001f;
@@ -2187,19 +2217,7 @@ void animCapibara() {
 				recorrido7 = true;
 			}
 		}
-		if (route6) {
-			rotZSkiperDer -= 0.2f;
-			rotZSkiperIzq -= 0.2f;
-			if (rotZSkiperDer < 30.0) {
-				rotZKowalskiDer -= 0.2;
-				rotZRicoIzq -= 0.2;
-				if (rotYKowalskiDer > 0.0) {
-					rotYRicoIzq += 0.2f;
-					rotYKowalskiDer -= 0.2f;
-					rotYSkiperDer -= 0.2f;
-					rotYSkiperIzq += 0.2f;
-				}
-
+		
 		if (recorrido7) {
 			rotKitZ = 0.0f;
 			rotKit = 135.0f;
@@ -2209,12 +2227,7 @@ void animCapibara() {
 				recorrido8 = true;
 				recorrido7 = false;
 			}
-			if (rotZSkiperDer < 0.0) {
-				route6 = false;
-				route1 = true;
-				animPenguin = false;
 		}
-
 		if (recorrido8) {
 			rotKit = 90.0f;
 			movXCapibara += 0.001f;
@@ -2254,12 +2267,6 @@ void animacionPanda() {
 			if (pandaBicepDerRotY > 100.0f) {
 				part2 = false;
 				part3 = true;
-void animCocodrilo() {
-	if (recorridoCoco) {
-
-		if (rotPatas1) {
-			if (rotPatasCo < 20) {
-				rotPatasCo += 0.1;
 			}
 		}
 		if (part3) {
@@ -2271,9 +2278,6 @@ void animCocodrilo() {
 			if (pandaBicepDerRotY < 0.0f) {
 				part3 = false;
 				part4 = true;
-			else {
-				rotPatas1 = false;
-				rotPatas2 = true;
 			}
 		}
 		if (part4) {
@@ -2289,10 +2293,6 @@ void animCocodrilo() {
 			if (pandaBicepIzqRotY < -100.0f) {
 				part4 = false;
 				part5 = true;
-
-		if (rotPatas2) {
-			if (rotPatasCo > 0) {
-				rotPatasCo -= 0.1;
 			}
 		}
 		if (part5) {
@@ -2304,9 +2304,6 @@ void animCocodrilo() {
 			if (pandaBicepIzqRotY > 0.0) {
 				part5 = false;
 				part6 = true;
-			else {
-				rotPatas1 = true;
-				rotPatas2 = false;
 			}
 		}
 		if (part6) {
@@ -2317,19 +2314,12 @@ void animCocodrilo() {
 			if (pandaBicepDerRotZ > -5.0f) {
 				pandaBicepIzqRotZ -= 0.09f;
 				pandaBicepDerRotZ -= 0.09f;
-
-		if (rotCola1) {
-			if (rotColaCo < 20) {
-				rotColaCo += 0.1;
 			}
 			pandaAntebrazoDerRotY += 0.09f;
 			pandaAntebrazoIzqRotY -= 0.09f;
 			if (pandaAntebrazoDerRotY > 90.0f) {
 				part6 = false;
 				part7 = true;
-			else {
-				rotCola1 = false;
-				rotCola2 = true;
 			}
 		}
 		if (part7) {
@@ -2344,10 +2334,6 @@ void animCocodrilo() {
 			if (pandaBicepDerRotX < -90.0f) {
 				part7 = false;
 				part8 = true;
-
-		if (rotCola2) {
-			if (rotColaCo > -20) {
-				rotColaCo -= 0.1;
 			}
 		}
 		if (part8) {
@@ -2372,9 +2358,6 @@ void animCocodrilo() {
 			if (pandaBicepDerRotX > 0.0f) {
 				part8 = false;
 				part9 = true;
-			else {
-				rotCola1 = true;
-				rotCola2 = false;
 			}
 		}
 		if (part9) {
@@ -2389,7 +2372,48 @@ void animCocodrilo() {
 				part1 = true;
 				animPanda = false;
 			}
+		}
+	}
+}
+void animCocodrilo() {
+	if (recorridoCoco) {
 
+		if (rotPatas1) {
+			if (rotPatasCo < 20) {
+				rotPatasCo += 0.1;
+			}
+			else {
+				rotPatas1 = false;
+				rotPatas2 = true;
+			}
+		}
+		if (rotPatas2) {
+			if (rotPatasCo > 0) {
+				rotPatasCo -= 0.1;
+			}
+			else {
+				rotPatas1 = true;
+				rotPatas2 = false;
+			}
+		}
+		if (rotCola1) {
+			if (rotColaCo < 20) {
+				rotColaCo += 0.1;
+			}
+			else {
+				rotCola1 = false;
+				rotCola2 = true;
+			}
+		}
+		if (rotCola2) {
+			if (rotColaCo > -20) {
+				rotColaCo -= 0.1;
+			}
+			else {
+				rotCola1 = true;
+				rotCola2 = false;
+			}
+		}
 		rotYCoco = -20;
 		movYCoco += 0.3639 * 0.001;
 		movCoco += 0.001;
@@ -2458,6 +2482,7 @@ void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode
 
 	if (keys[GLFW_KEY_P])
 		animPenguin = !animPenguin;
+
 	if (keys[GLFW_KEY_C])
 	{
 		recorridoCapibara = true;
