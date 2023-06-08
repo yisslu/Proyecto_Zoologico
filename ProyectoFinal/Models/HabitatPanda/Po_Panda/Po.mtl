@@ -1,0 +1,16 @@
+newmtl Po:body
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Po.png
+Ni 1.00
+newmtl Po:eyes
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Po_eye.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 96.08

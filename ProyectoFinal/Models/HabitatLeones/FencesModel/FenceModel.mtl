@@ -1,0 +1,562 @@
+newmtl ColumModel:baseblocks
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd concbrick.jpg
+Ni 1.50
+Ks 0.09 0.09 0.09
+Ns 10.00
+newmtl ColumModel:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl ColumModel1:baseblocks
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd concbrick.jpg
+Ni 1.50
+Ks 0.09 0.09 0.09
+Ns 10.00
+newmtl ColumModel1:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl ColumModel2:baseblocks
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd concbrick.jpg
+Ni 1.50
+Ks 0.09 0.09 0.09
+Ns 10.00
+newmtl ColumModel2:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl ColumModel3:baseblocks
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd concbrick.jpg
+Ni 1.50
+Ks 0.09 0.09 0.09
+Ns 10.00
+newmtl ColumModel3:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal6:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal6:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal7:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal7:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal8:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.dds
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal8:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal9:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal9:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal10:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal10:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal11:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal11:proxy
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal13:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal13:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal14:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal14:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal15:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.dds
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal15:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal16:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal16:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal17:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal17:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal18:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal18:proxy
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal19:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal19:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal20:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal20:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal21:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.dds
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal21:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal22:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal22:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal23:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal23:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal24:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal24:proxy
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal25:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal25:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal26:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal26:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal27:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.dds
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal27:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal28:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal28:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal29:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal29:proxy
+illum 4
+Kd 0.59 0.59 0.59
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl LargeMetal30:metal
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.36 0.36 0.36
+Ns 10.00
+newmtl LargeMetal30:proxy
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 0.00 0.00 0.00
+map_Kd metal.jpg
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl Rocks1:pasted__phong1SG3
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Rock_9_Base_Color.jpg
+bump  -bm 1 Rock_9_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Rock_9_Specular.jpg
+Ns 18.00
+newmtl Rocks1:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Rock_9_Base_Color.jpg
+bump  -bm 1 Rock_9_Normal.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Rock_9_Specular.jpg
+Ns 18.00
+newmtl initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl tree_maple:Tree_0SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.20 0.20 0.20
+Tf 1.00 1.00 1.00
+map_Kd bark02.png
+Ni 1.00
+Ks 0.20 0.20 0.20
+Ns 18.00
+newmtl tree_maple:Tree_1SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd leaf_maple.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl tree_maple1:Tree_0SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.20 0.20 0.20
+Tf 1.00 1.00 1.00
+map_Kd bark02.png
+Ni 1.00
+Ks 0.20 0.20 0.20
+Ns 18.00
+newmtl tree_maple1:Tree_1SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd leaf_maple.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl tree_maple2:Tree_0SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.20 0.20 0.20
+Tf 1.00 1.00 1.00
+map_Kd bark02.png
+Ni 1.00
+Ks 0.20 0.20 0.20
+Ns 18.00
+newmtl tree_maple2:Tree_1SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd leaf_maple.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00

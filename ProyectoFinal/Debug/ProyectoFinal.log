@@ -1,0 +1,153 @@
+﻿  317036833_PROYECTOFINAL_GPO11.cpp
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\modelAnim.h(104,44): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\modelAnim.h(519,24): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(161,18): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(161,50): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(161,81): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(162,71): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(163,43): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(164,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(204,66): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(205,58): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(206,64): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(653,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(927,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(938,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(944,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(948,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(952,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(956,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(960,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(964,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(968,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(972,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(976,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(980,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(984,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(988,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(992,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(996,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1000,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1004,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1008,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1012,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1016,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1020,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1024,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1028,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1032,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1036,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1040,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1044,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1048,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1052,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1056,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1060,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1183,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1241,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1254,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1264,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1273,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1282,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1292,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1301,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1310,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1320,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1330,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1337,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1390,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1401,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1410,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1419,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1428,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1439,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1448,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1459,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1470,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1479,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1488,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1496,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1509,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1515,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1523,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1531,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1544,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1601,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1627,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1636,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1641,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1645,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1649,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1653,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1657,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1661,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1665,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1669,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1673,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1677,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1681,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1685,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1689,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1693,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1697,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1701,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1705,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1709,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1713,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1717,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1721,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1725,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1729,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1733,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1737,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1741,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1745,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1749,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1753,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1762,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1784,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1793,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1797,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1801,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1805,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1809,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1813,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1817,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1821,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1825,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1829,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1833,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1837,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(1844,84): warning C4244: 'argumento': conversión de 'double' a 'GLint'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2016,23): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2021,25): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2046,25): warning C4305: '+=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2063,25): warning C4305: '-=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2073,27): warning C4305: '-=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2114,27): warning C4305: '-=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2115,23): warning C4305: '-=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2213,23): warning C4305: '+=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2214,25): warning C4305: '-=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2223,23): warning C4305: '-=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2224,25): warning C4305: '+=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2257,29): warning C4305: '+=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2283,29): warning C4305: '-=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2291,29): warning C4305: '-=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2324,29): warning C4305: '-=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2338,29): warning C4305: '+=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2345,33): warning C4305: '-=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2347,29): warning C4305: '+=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2355,29): warning C4305: '-=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2373,22): warning C4305: '+=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2382,22): warning C4305: '-=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2391,21): warning C4305: '+=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2400,21): warning C4305: '-=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2408,29): warning C4305: '+=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2409,19): warning C4305: '+=': truncamiento de 'double' a 'float'
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2498,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2499,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2503,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2504,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2506,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Yisus\Escritorio\CompuGra_LocalPF\ProyectoFinal\317036833_PROYECTOFINAL_GPO11.cpp(2507,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+  ProyectoFinal.vcxproj -> D:\Yisus\Escritorio\CompuGra_LocalPF\Debug\ProyectoFinal.exe
