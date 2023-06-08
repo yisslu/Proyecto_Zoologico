@@ -138,7 +138,6 @@ bool part6 = false;
 bool part7 = false;
 bool part8 = false;
 bool part9 = false;
-bool recorridoMariposa = false, anim = false, anim2 = false, direccion = true;
 
 //Animation crocodile
 float rotYCoco = 0.0f, rotPatasCo = 0.0f, rotColaCo = 0.0f, movYCoco = 0.0f, movCoco = 0.0f;
@@ -156,11 +155,9 @@ bool active;
 GLfloat deltaTime = 0.0f;	// Time between current frame and last frame
 GLfloat lastFrame = 0.0f;  	// Time of last frame
 
-// Keyframes
-
+//Habitat Position
 float posXCa = PosIni.x + 84.22f, posYCa = PosIni.y, posZCa = PosIni.z + 44.191f;
 float posXMari = PosIni.x - 3.0f, posYMari = PosIni.y, posZMari = PosIni.z + 44.768f;
-
 float posXLeones = PosIni.x - 13.277, posYLeones = PosIni.y - 3.134, posZLeones = PosIni.z - 44.467;
 float posXPanda = PosIni.x + 86.652f, posYPanda = PosIni.y, posZPanda = PosIni.z - 43.570;
 float posXPenguin = PosIni.x, posYPenguin = PosIni.y - 5.535, posZPenguin = PosIni.z;
@@ -342,7 +339,7 @@ int main()
 	Model piernaTraseIzq((char*)"Models/Capibaras/capibara/piernaTI.obj");
 	Model capibara((char*)"Models/Capibaras/capibara/cuerpo.obj");
 
-	//Lion's habitat model declarations
+	//Lion's habitat model load
 	Model lionFloor((char*)"Models/HabitatLeones/FloorModel/FloorPlane.obj");
 	Model lionRocks((char*)"Models/HabitatLeones/RockCollection/Rocks.obj");
 	Model lionWater((char*)"Models/HabitatLeones/WaterLakeModel/WaterPlane.obj");
@@ -351,6 +348,18 @@ int main()
 	Model lionCTree((char*)"Models/HabitatLeones/Tree/CTree.obj");
 	Model lionFences((char*)"Models/HabitatLeones/FencesModel/FenceModel.obj");
 	Model lionExterior((char*)"Models/HabitatLeones/ConcreteExterior/BaseExterior.obj");
+	Model scar((char*)"Models/HabitatLeones/personajes/scar/scar.obj");
+	Model simba((char*)"Models/HabitatLeones/personajes/simba/simba.obj");
+
+	//Lion animate
+	Model bodyLion((char*)"Models/HabitatLeones/personajes/alexLion/cuerpo.obj");
+	Model headLion((char*)"Models/HabitatLeones/personajes/alexLion/cabeza.obj");
+	Model bicepDer((char*)"Models/HabitatLeones/personajes/alexLion/bicepDer.obj");
+	Model bicepIzq((char*)"Models/HabitatLeones/personajes/alexLion/bicepIzq.obj");
+	Model antebrazoDer((char*)"Models/HabitatLeones/personajes/alexLion/antebrazoDer.obj");
+	Model antebrazoIzq((char*)"Models/HabitatLeones/personajes/alexLion/antebrazoIzq.obj");
+	Model manoDer((char*)"Models/HabitatLeones/personajes/alexLion/manoDer.obj");
+	Model manoIzq((char*)"Models/HabitatLeones/personajes/alexLion/manoIzq.obj");
 
 	//Panda's habitat model load
 	Model pandaFloor((char*)"Models/HabitatPanda/GrassPlane/GrassPlane.obj");
@@ -406,18 +415,6 @@ int main()
 	Model enviStreetLightGlass((char*)"Models/Entorno/StreetLight/StreetLightGlass.obj");
 	Model enviTree((char*)"Models/Entorno/tree/tree_maple.obj");
 	Model enviBank((char*)"Models/Entorno/Bank/Bank.obj");
-	Model scar((char*)"Models/HabitatLeones/personajes/scar/scar.obj");
-	Model simba((char*)"Models/HabitatLeones/personajes/simba/simba.obj");
-
-	//Lion animate
-	Model bodyLion((char*)"Models/HabitatLeones/personajes/alexLion/cuerpo.obj");
-	Model headLion((char*)"Models/HabitatLeones/personajes/alexLion/cabeza.obj");
-	Model bicepDer((char*)"Models/HabitatLeones/personajes/alexLion/bicepDer.obj");
-	Model bicepIzq((char*)"Models/HabitatLeones/personajes/alexLion/bicepIzq.obj");
-	Model antebrazoDer((char*)"Models/HabitatLeones/personajes/alexLion/antebrazoDer.obj");
-	Model antebrazoIzq((char*)"Models/HabitatLeones/personajes/alexLion/antebrazoIzq.obj");
-	Model manoDer((char*)"Models/HabitatLeones/personajes/alexLion/manoDer.obj");
-	Model manoIzq((char*)"Models/HabitatLeones/personajes/alexLion/manoIzq.obj");
 
 	//Herpetario
 	Model HerpCueva((char*)"Models/Herpetario/Cueva/Cueva.obj");
@@ -784,6 +781,59 @@ int main()
 		view = camera.GetViewMatrix();
 		//Habitat de capibaras
 		glm::mat4 model(1);
+		model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		casaCapi.Draw(lightingShader);
+		barda.Draw(lightingShader);
+		rocas.Draw(lightingShader);
+		tina.Draw(lightingShader);
+		//Capybara anim
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXCa + movXCapibara * deltaTime, posYCa + movYCapibara * deltaTime, posZCa - movZCapibara * deltaTime));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		model = glm::rotate(model, glm::radians(rotKit * deltaTime), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotKitZ * deltaTime), glm::vec3(1.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		capibara.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXCa + movXCapibara * deltaTime, posYCa + movYCapibara * deltaTime, posZCa - movZCapibara * deltaTime));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		model = glm::rotate(model, glm::radians(rotKit * deltaTime), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotKitZ * deltaTime), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pataDelantera), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(-0.083, -0.158, 0.157));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		piernaDelanDer.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXCa + movXCapibara * deltaTime, posYCa + movYCapibara * deltaTime, posZCa - movZCapibara * deltaTime));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		model = glm::rotate(model, glm::radians(rotKit * deltaTime), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotKitZ * deltaTime), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(pataDelantera * deltaTime), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.102, -0.144, 0.165));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		piernaDelanIzq.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXCa + movXCapibara * deltaTime, posYCa + movYCapibara * deltaTime, posZCa - movZCapibara * deltaTime));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		model = glm::rotate(model, glm::radians(pataTrasera * deltaTime), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::rotate(model, glm::radians(rotKit * deltaTime), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotKitZ * deltaTime), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.086, -0.097, -0.349));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		piernaTraseIzq.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXCa + movXCapibara * deltaTime, posYCa + movYCapibara * deltaTime, posZCa - movZCapibara * deltaTime));
+		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		model = glm::rotate(model, glm::radians(pataTrasera * deltaTime), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::rotate(model, glm::radians(rotKit * deltaTime), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotKitZ * deltaTime), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(-0.095, -0.112, -0.355));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		piernaTraseDer.Draw(lightingShader);
 
 		// Mariposario
 		//Estructura del domo
@@ -795,63 +845,12 @@ int main()
 		domo.Draw(lightingShader);
 		estructura.Draw(lightingShader);
 		banca.Draw(lightingShader);
-		
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
 		model = glm::translate(model, glm::vec3(0.2f, 0.0f, 0.2f));
 		model = glm::rotate(model, glm::radians(-180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		banca.Draw(lightingShader);
-
-		////Capybara anim
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
-		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		capibara.Draw(lightingShader);
-
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
-		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
-		model = glm::rotate(model, glm::radians(pataDelantera), glm::vec3(1.0f, 0.0f, 0.0f));
-		model = glm::translate(model, glm::vec3(-0.083, -0.158, 0.157));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		piernaDelanDer.Draw(lightingShader);
-
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
-		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
-		model = glm::rotate(model, glm::radians(pataDelantera), glm::vec3(1.0f, 0.0f, 0.0f));
-		model = glm::translate(model, glm::vec3(0.102, -0.144, 0.165));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		piernaDelanIzq.Draw(lightingShader);
-
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
-		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		model = glm::rotate(model, glm::radians(pataTrasera), glm::vec3(0.0f, 0.0f, 1.0f));
-		model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
-		model = glm::translate(model, glm::vec3(0.086, -0.097, -0.349));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		piernaTraseIzq.Draw(lightingShader);
-
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
-		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		model = glm::rotate(model, glm::radians(pataTrasera), glm::vec3(0.0f, 0.0f, 1.0f));
-		model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
-		model = glm::translate(model, glm::vec3(-0.095, -0.112, -0.355));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		piernaTraseDer.Draw(lightingShader);
-	
 		//Arbol 1
 		 model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
@@ -859,7 +858,6 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
 		arbol.Draw(lightingShader);
-
 		//Arbol 2
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
@@ -868,7 +866,6 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
 		arbol.Draw(lightingShader);
-
 		//Cuerpo de la mariposa
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
@@ -877,7 +874,6 @@ int main()
 		model = glm::rotate(model, glm::radians(rotMariposa), glm::vec3(0.0f, 1.0f, 0.0));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		cuerpoMari.Draw(lightingShader);
-
 		//Cuerpo de la mariposa 2
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
@@ -885,7 +881,6 @@ int main()
 		tmp2 = model = glm::translate(model, glm::vec3(1.6, 2.0f, 0.178));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		cuerpoMari.Draw(lightingShader);
-
 		//Ala izquierda de la mariposa
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
@@ -896,7 +891,6 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
 		alaIzq.Draw(lightingShader);
-
 		//Ala derecha de la mariposa
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
@@ -907,7 +901,6 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
 		alaDer.Draw(lightingShader);
-
 		//Ala izquierda de la mariposa 2
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
@@ -916,7 +909,6 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
 		alaIzq.Draw(lightingShader);
-
 		//Ala derecha de la mariposa 2
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
@@ -939,12 +931,11 @@ int main()
 		enviGate.Draw(lightingShader);
 		enviLateralFence.Draw(lightingShader);
 		enviHerpFloor.Draw(lightingShader);
-
 		model = glm::translate(model, glm::vec3(159.910f, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		enviLateralFence.Draw(lightingShader);
-
+		//StreetLight Draw
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXEnvi + 18.37, posYEnvi, posZEnvi + 13.749));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -1242,7 +1233,6 @@ int main()
 		manoIzq.Draw(lightingShader);
 
 		//Panda habitat draw
-		//Herpetario
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXPanda, posYPanda, posZPanda));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -1314,7 +1304,6 @@ int main()
 		model = glm::rotate(model, glm::radians(pandaManoIzqRotX), glm::vec3(1.0f, 0.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaManoIzqRotY), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaManoIzqRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
-		
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		pandaManoIzq.Draw(lightingShader);
@@ -1335,8 +1324,6 @@ int main()
 		model = glm::rotate(model, glm::radians(pandaPiernaIzqRotX), glm::vec3(1.0f, 0.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaPiernaIzqRotY), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaPiernaIzqRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
-
-		model = glm::mat4(1);
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		pandaPiernaIzq.Draw(lightingShader);
@@ -2345,7 +2332,6 @@ void animacionPanda() {
 			pandaManoDerRotX -= 0.15f;
 			if (pandaManoDerRotZ < 0.0f)
 				pandaManoDerRotZ += 0.15;
-
 			if (pandaAntebrazoIzqRotY < 0.0f)
 				pandaAntebrazoIzqRotY += 0.15f;
 			if (pandaBicepIzqRotZ > -25.0f)
