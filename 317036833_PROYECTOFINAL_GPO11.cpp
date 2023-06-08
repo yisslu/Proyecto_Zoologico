@@ -34,6 +34,9 @@ void DoMovement();
 void animacionMariposa();
 void animacionPinguinos();
 void animacionPanda();
+void animCapibara();
+void keyframeLion();
+void animCocodrilo();
 
 // Window dimensions
 const GLuint WIDTH = 800, HEIGHT = 600;
@@ -49,6 +52,16 @@ float range = 0.0f;
 float rot = 0.0f;
 float movCamera = 0.0f;
 int raiz = 1;
+//Animation Capybara
+float rotKit = -90.0f;
+float rotKitZ = 0.0f;
+float movXCapibara = 13.5f, movZCapibara = 1.5f, movYCapibara = 0.5f;
+float pataTrasera = 0.0f, pataDelantera = 0.0f;
+bool recorrido1 = true, recorrido2 = false, recorrido3 = false, recorrido4 = false,
+recorrido5 = false, recorrido6 = false, recorrido7 = false, recorrido8 = false,
+animPatasDel = false, animPatasTras = false, recorridoCapibara = false;
+
+//Animation butterfly
 float rot1 = 0.0f;
 float rot2 = 0.0f;
 float movKitX = 0.0f;
@@ -125,6 +138,11 @@ bool part6 = false;
 bool part7 = false;
 bool part8 = false;
 bool part9 = false;
+bool recorridoMariposa = false, anim = false, anim2 = false, direccion = true;
+
+//Animation crocodile
+float rotYCoco = 0.0f, rotPatasCo = 0.0f, rotColaCo = 0.0f, movYCoco = 0.0f, movCoco = 0.0f;
+bool recorridoCoco = false, rotPatas1 = false, rotPatas2 = false, rotCola1 = false, rotCola2 = false;
 
 // Light attributes
 glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
@@ -139,6 +157,7 @@ GLfloat deltaTime = 0.0f;	// Time between current frame and last frame
 GLfloat lastFrame = 0.0f;  	// Time of last frame
 
 // Keyframes
+
 float posXCa = PosIni.x + 84.22f, posYCa = PosIni.y, posZCa = PosIni.z + 44.191f;
 float posXMari = PosIni.x - 3.0f, posYMari = PosIni.y, posZMari = PosIni.z + 44.768f;
 
@@ -148,8 +167,12 @@ float posXPenguin = PosIni.x, posYPenguin = PosIni.y - 5.535, posZPenguin = PosI
 float posXHerp = PosIni.x + 74.816, posYHerp = PosIni.y, posZHerp = PosIni.z;
 float posXEnvi = PosIni.x, posYEnvi = PosIni.y, posZEnvi = PosIni.z;
 
-#define MAX_FRAMES 9
-int i_max_steps = 190;
+// Keyframes
+float rotBicepDer = 0.0f, rotBicepIzq = 0.0f, rotAnteDer = 0.0f, rotAnteIzq = 0.0f, rotManoDer = 0.0f,
+rotManoIzq = 0.0f, rotCabeza = 0.0f, posX = posXLeones, posY = posYLeones, posZ = posZLeones;
+
+#define MAX_FRAMES 4
+int i_max_steps = 50;
 int i_curr_steps = 0;
 typedef struct _frame
 {
@@ -160,6 +183,10 @@ typedef struct _frame
 	float incX;		//Variable para IncrementoX
 	float incY;		//Variable para IncrementoY
 	float incZ;		//Variable para IncrementoZ
+	float rotBicepDer, rotBicepIzq, rotAnteDer, rotAnteIzq, rotManoDer,
+		rotManoIzq, rotCabeza;
+	float rotIncBicepDer, rotIncBicepIzq, rotIncAnteDer, rotIncAnteIzq, rotIncManoDer,
+		rotIncManoIzq, rotIncCabeza;
 }FRAME;
 
 FRAME KeyFrame[MAX_FRAMES];
@@ -177,47 +204,52 @@ glm::vec3 pointLightPositions[] = {
 
 glm::vec3 LightP1;
 
+float frameX[MAX_FRAMES] = { -108.277,-108.277,-108.277,-108.277 };
+float frameY[MAX_FRAMES] = { -2.134,-2.134,-2.134,-2.134 };
+float frameZ[MAX_FRAMES] = { -89.467,-89.467 ,-89.467 ,-89.467 };
 
+float rBicepDer[MAX_FRAMES] = { -3,-56,-56,-56 };
+float rAntebrazoDer[MAX_FRAMES] = { 0,0,-32,-32 };
+float rManoDer[MAX_FRAMES] = { 0,0,0,-81 };
 
+float rBicepIzq[MAX_FRAMES] = { 0,-73,-82,-82 };
+float rAntebrazoIzq[MAX_FRAMES] = { 0,0,-50,-50 };
+float rManoIzq[MAX_FRAMES] = { 0,0,0,90 };
 
-//void saveFrame(void)
-//{
-//	KeyFrame[FrameIndex].posX = posX;
-//	KeyFrame[FrameIndex].posY = posY;
-//	KeyFrame[FrameIndex].posZ = posZ;
-//	
-//	KeyFrame[FrameIndex].rotBicep = rotBicep;
-//	KeyFrame[FrameIndex].rotAntebrazo = rotAntebrazo;
-//	KeyFrame[FrameIndex].rotMano = rotMano;
-//	
-//	printf("Frame %d: (posx %f,posy %f,posz %f)\n", FrameIndex, KeyFrame[FrameIndex].posX, KeyFrame[FrameIndex].posY, KeyFrame[FrameIndex].posZ);
-//	printf("Frame %d: (Bicep %f,Antebrazo %f,Mano %f)\n", FrameIndex, KeyFrame[FrameIndex].rotBicep, KeyFrame[FrameIndex].rotAntebrazo, KeyFrame[FrameIndex].rotMano);
-//	FrameIndex++;
-//}
+float rCabeza[MAX_FRAMES] = { 0,0,0,79 };
 
-//void resetElements(void)
-//{
-//	posX = KeyFrame[0].posX;
-//	posY = KeyFrame[0].posY;
-//	posZ = KeyFrame[0].posZ;
-//
-//	rotBicep = KeyFrame[0].rotBicep;
-//	rotAntebrazo = KeyFrame[0].rotAntebrazo;
-//	rotMano = KeyFrame[0].rotMano;
-//}
-//
-//void interpolation(void)
-//{
-//
-//	KeyFrame[playIndex].incX = (KeyFrame[playIndex + 1].posX - KeyFrame[playIndex].posX) / i_max_steps;
-//	KeyFrame[playIndex].incY = (KeyFrame[playIndex + 1].posY - KeyFrame[playIndex].posY) / i_max_steps;
-//	KeyFrame[playIndex].incZ = (KeyFrame[playIndex + 1].posZ - KeyFrame[playIndex].posZ) / i_max_steps;
-//	
-//	KeyFrame[playIndex].rotIncBicep = (KeyFrame[playIndex + 1].rotBicep - KeyFrame[playIndex].rotBicep) / i_max_steps;
-//	KeyFrame[playIndex].rotIncAnte = (KeyFrame[playIndex + 1].rotAntebrazo - KeyFrame[playIndex].rotAntebrazo) / i_max_steps;
-//	KeyFrame[playIndex].rotIncMano = (KeyFrame[playIndex + 1].rotMano - KeyFrame[playIndex].rotMano) / i_max_steps;
-//
-//}
+void resetElements(void)
+{
+	posX = KeyFrame[0].posX;
+	posY = KeyFrame[0].posY;
+	posZ = KeyFrame[0].posZ;
+
+	rotBicepDer = KeyFrame[0].rotBicepDer;
+	rotAnteDer = KeyFrame[0].rotAnteDer;
+	rotManoDer = KeyFrame[0].rotManoDer;
+	rotBicepIzq = KeyFrame[0].rotBicepIzq;
+	rotAnteIzq = KeyFrame[0].rotAnteIzq;
+	rotManoIzq = KeyFrame[0].rotManoIzq;
+	rotCabeza = KeyFrame[0].rotCabeza;
+}
+
+void interpolation(void)
+{
+
+	KeyFrame[playIndex].incX = (KeyFrame[playIndex + 1].posX - KeyFrame[playIndex].posX) / i_max_steps;
+	KeyFrame[playIndex].incY = (KeyFrame[playIndex + 1].posY - KeyFrame[playIndex].posY) / i_max_steps;
+	KeyFrame[playIndex].incZ = (KeyFrame[playIndex + 1].posZ - KeyFrame[playIndex].posZ) / i_max_steps;
+
+	KeyFrame[playIndex].rotIncBicepDer = (KeyFrame[playIndex + 1].rotBicepDer - KeyFrame[playIndex].rotBicepDer) / i_max_steps;
+	KeyFrame[playIndex].rotIncAnteDer = (KeyFrame[playIndex + 1].rotAnteDer - KeyFrame[playIndex].rotAnteDer) / i_max_steps;
+	KeyFrame[playIndex].rotIncManoDer = (KeyFrame[playIndex + 1].rotManoDer - KeyFrame[playIndex].rotManoDer) / i_max_steps;
+
+	KeyFrame[playIndex].rotIncBicepIzq = (KeyFrame[playIndex + 1].rotBicepIzq - KeyFrame[playIndex].rotBicepIzq) / i_max_steps;
+	KeyFrame[playIndex].rotIncAnteIzq = (KeyFrame[playIndex + 1].rotAnteIzq - KeyFrame[playIndex].rotAnteIzq) / i_max_steps;
+	KeyFrame[playIndex].rotIncManoIzq = (KeyFrame[playIndex + 1].rotManoIzq - KeyFrame[playIndex].rotManoIzq) / i_max_steps;
+
+	KeyFrame[playIndex].rotIncCabeza = (KeyFrame[playIndex + 1].rotCabeza - KeyFrame[playIndex].rotCabeza) / i_max_steps;
+}
 
 
 
@@ -304,6 +336,15 @@ int main()
 	Model aguaTina((char*)"Models/Capibaras/tina/Agua.obj");
 	
 	//Lion's habitat model load
+	////Capybara 
+	//Model piernaDelanDer((char*)"Models/Capibaras/capibara/piernaDD.obj");
+	//Model piernaDelanIzq((char*)"Models/Capibaras/capibara/piernaDI.obj");
+	//Model piernaTraseDer((char*)"Models/Capibaras/capibara/piernaTD.obj");
+	//Model piernaTraseIzq((char*)"Models/Capibaras/capibara/piernaTI.obj");
+	//Model capibara((char*)"Models/Capibaras/capibara/cuerpo.obj");
+
+
+	//Lion's habitat model declarations
 	Model lionFloor((char*)"Models/HabitatLeones/FloorModel/FloorPlane.obj");
 	Model lionRocks((char*)"Models/HabitatLeones/RockCollection/Rocks.obj");
 	Model lionWater((char*)"Models/HabitatLeones/WaterLakeModel/WaterPlane.obj");
@@ -367,17 +408,40 @@ int main()
 	Model enviStreetLightGlass((char*)"Models/Entorno/StreetLight/StreetLightGlass.obj");
 	Model enviTree((char*)"Models/Entorno/tree/tree_maple.obj");
 	Model enviBank((char*)"Models/Entorno/Bank/Bank.obj");
+	Model scar((char*)"Models/HabitatLeones/personajes/scar/scar.obj");
+	Model simba((char*)"Models/HabitatLeones/personajes/simba/simba.obj");
+
+	//Lion animate
+	Model bodyLion((char*)"Models/HabitatLeones/personajes/alexLion/cuerpo.obj");
+	Model headLion((char*)"Models/HabitatLeones/personajes/alexLion/cabeza.obj");
+	Model bicepDer((char*)"Models/HabitatLeones/personajes/alexLion/bicepDer.obj");
+	Model bicepIzq((char*)"Models/HabitatLeones/personajes/alexLion/bicepIzq.obj");
+	Model antebrazoDer((char*)"Models/HabitatLeones/personajes/alexLion/antebrazoDer.obj");
+	Model antebrazoIzq((char*)"Models/HabitatLeones/personajes/alexLion/antebrazoIzq.obj");
+	Model manoDer((char*)"Models/HabitatLeones/personajes/alexLion/manoDer.obj");
+	Model manoIzq((char*)"Models/HabitatLeones/personajes/alexLion/manoIzq.obj");
 
 	//Herpetario
 	Model HerpCueva((char*)"Models/Herpetario/Cueva/Cueva.obj");
 	Model Pecera((char*)"Models/Herpetario/Cueva/cristalesPecera.obj");
-
+	Model aguaHerp((char*)"Models/Herpetario/Cueva/agua.obj");
+	Model rocaHerp((char*)"Models/Herpetario/Cueva/roca.obj");
+	Model planta1Herp((char*)"Models/Herpetario/Cueva/plantas/plantas1.obj");
+	Model planta2Herp((char*)"Models/Herpetario/Cueva/plantas/plantas2.obj");
+	Model troncos1Herp((char*)"Models/Herpetario/Cueva/tronco/troncos1.obj");
+	Model troncos2Herp((char*)"Models/Herpetario/Cueva/tronco/troncos2.obj");
+	Model randall((char*)"Models/Herpetario/randall/randall.obj");
+	Model mushu((char*)"Models/Herpetario/mushu/mushu.obj");
+	Model cuerpoCoco((char*)"Models/Herpetario/crocodile/cocodrilo.obj");
+	Model pataDerCoco((char*)"Models/Herpetario/crocodile/pataDer.obj");
+	Model pataIzqCoco((char*)"Models/Herpetario/crocodile/pataIzq.obj");
+	Model colaCoco((char*)"Models/Herpetario/crocodile/cola.obj");
 
 	// Build and compile our shader program
 
 	//Inicializaci�n de KeyFrames
 
-	/*for (int i = 0; i < MAX_FRAMES; i++)
+	for (int i = 0; i < MAX_FRAMES; i++)
 	{
 		KeyFrame[i].posX = frameX[i];
 		KeyFrame[i].posY = frameY[i];
@@ -385,13 +449,23 @@ int main()
 		KeyFrame[i].incX = 0;
 		KeyFrame[i].incY = 0;
 		KeyFrame[i].incZ = 0;
-		KeyFrame[i].rotBicep = rBicep[i];
-		KeyFrame[i].rotAntebrazo = rAntebrazo[i];
-		KeyFrame[i].rotMano = rMano[i];
-		KeyFrame[i].rotIncBicep = 0;
-		KeyFrame[i].rotIncAnte = 0;
-		KeyFrame[i].rotIncMano = 0;
-	}*/
+		KeyFrame[i].rotBicepDer = rBicepDer[i];
+		KeyFrame[i].rotAnteDer = rAntebrazoDer[i];
+		KeyFrame[i].rotManoDer = rManoDer[i];
+		KeyFrame[i].rotIncBicepDer = 0;
+		KeyFrame[i].rotIncAnteDer = 0;
+		KeyFrame[i].rotIncManoDer = 0;
+
+		KeyFrame[i].rotBicepIzq = rBicepIzq[i];
+		KeyFrame[i].rotAnteIzq = rAntebrazoIzq[i];
+		KeyFrame[i].rotManoIzq = rManoIzq[i];
+		KeyFrame[i].rotIncBicepIzq = 0;
+		KeyFrame[i].rotIncAnteIzq = 0;
+		KeyFrame[i].rotIncManoIzq = 0;
+
+		KeyFrame[i].rotCabeza = rCabeza[i];
+		KeyFrame[i].rotIncCabeza = 0;
+	}
 
 
 
@@ -591,6 +665,9 @@ int main()
 		animacionMariposa();
 		animacionPinguinos();
 		animacionPanda();
+		animCapibara();
+		animCocodrilo();
+		keyframeLion();
 
 
 		// Clear the colorbuffer
@@ -699,6 +776,7 @@ int main()
 		glm::mat4 tmpKowalski = glm::mat4(1.0f); //Temp for Kowalski
 		glm::mat4 tmpRico = glm::mat4(1.0f); //Temp for Rico
 		glm::mat4 tmpSkiper = glm::mat4(1.0f);	//Temp for Skiper
+		glm::mat4 tmp2 = glm::mat4(1.0f);
 
 		view = camera.GetViewMatrix();
 
@@ -708,15 +786,6 @@ int main()
 		view = camera.GetViewMatrix();
 		//Habitat de capibaras
 		glm::mat4 model(1);
-		model = glm::translate(model, glm::vec3(posXCa, posYCa, posZCa));
-		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
-		casaCapi.Draw(lightingShader);
-		barda.Draw(lightingShader);
-		rocas.Draw(lightingShader);
-		tina.Draw(lightingShader);
 
 		// Mariposario
 		//Estructura del domo
@@ -729,11 +798,7 @@ int main()
 		estructura.Draw(lightingShader);
 		banca.Draw(lightingShader);
 		
-		//Banca1
-		/*model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		banca.Draw(lightingShader);
+		//////Capybara anim
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
@@ -741,10 +806,56 @@ int main()
 		model = glm::rotate(model, glm::radians(-180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		banca.Draw(lightingShader);*/
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
+		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		//model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//capibara.Draw(lightingShader);
+
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
+		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		//model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
+		//model = glm::rotate(model, glm::radians(pataDelantera), glm::vec3(1.0f, 0.0f, 0.0f));
+		//model = glm::translate(model, glm::vec3(-0.083, -0.158, 0.157));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//piernaDelanDer.Draw(lightingShader);
 
 		//Arbol 1
 		//model = glm::mat4(1);
 		////model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		//model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
+		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		//model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
+		//model = glm::rotate(model, glm::radians(pataDelantera), glm::vec3(1.0f, 0.0f, 0.0f));
+		//model = glm::translate(model, glm::vec3(0.102, -0.144, 0.165));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//piernaDelanIzq.Draw(lightingShader);
+
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
+		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		//model = glm::rotate(model, glm::radians(pataTrasera), glm::vec3(0.0f, 0.0f, 1.0f));
+		//model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
+		//model = glm::translate(model, glm::vec3(0.086, -0.097, -0.349));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//piernaTraseIzq.Draw(lightingShader);
+
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXCa + movXCapibara, posYCa + movYCapibara, posZCa - movZCapibara));
+		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		//model = glm::rotate(model, glm::radians(pataTrasera), glm::vec3(0.0f, 0.0f, 1.0f));
+		//model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::rotate(model, glm::radians(rotKitZ), glm::vec3(1.0f, 0.0f, 0.0f));
+		//model = glm::translate(model, glm::vec3(-0.095, -0.112, -0.355));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//piernaTraseDer.Draw(lightingShader);
+
 		//model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
 		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
@@ -761,29 +872,26 @@ int main()
 
 		////Cuerpo de la mariposa
 		//model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(posX, posY, posZ));
-		//model = glm::translate(model, glm::vec3(5.0f, 0.0f, -5.0f));
-		//model = glm::translate(model, glm::vec3(movKitX, 2.0f, movKitZ));
-		//model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		//model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		//model = glm::translate(model, glm::vec3(movKitX, 4.0f, movKitZ));
 		//model = glm::rotate(model, glm::radians(rotMariposa), glm::vec3(0.0f, 1.0f, 0.0));
 		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		//cuerpoMari.Draw(lightingShader);
 
 		////Cuerpo de la mariposa 2
 		//model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(posX, posY, posZ));
-		//model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
-		//model = glm::translate(model, glm::vec3(5.0f, 0.0f, -5.0f));
+		//model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
 		//tmp2 = model = glm::translate(model, glm::vec3(1.6, 2.0f, 0.178));
 		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		//cuerpoMari.Draw(lightingShader);
 
 		////Ala izquierda de la mariposa
 		//model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(posX, posY, posZ));
-		//model = glm::translate(model, glm::vec3(5.0f, 0.0f, -5.0f));
+		//model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
 		//model = glm::translate(model, glm::vec3(movKitX + 0.001f, 4.0f, movKitZ));
-		//model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
 		//model = glm::rotate(model, glm::radians(rotMariposa), glm::vec3(0.0f, 1.0f, 0.0));
 		//model = glm::rotate(model, glm::radians(rot1), glm::vec3(0.0f, 0.0f, 1.0f));
 		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -792,10 +900,9 @@ int main()
 
 		////Ala derecha de la mariposa
 		//model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(posX, posY, posZ));
-		//model = glm::translate(model, glm::vec3(5.0f, 0.0f, -5.0f));
+		//model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
+		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
 		//model = glm::translate(model, glm::vec3(movKitX-0.001f, 4.0f, movKitZ));
-		//model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
 		//model = glm::rotate(model, glm::radians(rotMariposa), glm::vec3(0.0f, 1.0f, 0.0));
 		//model = glm::rotate(model, glm::radians(rot2), glm::vec3(0.0f, 0.0f, -1.0f));
 		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -804,8 +911,7 @@ int main()
 
 		////Ala izquierda de la mariposa 2
 		//model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(posX, posY, posZ));
-		//model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		//model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
 		//model = glm::translate(tmp2, glm::vec3(0.001f, 0.0f, 0.0f));
 		//model = glm::rotate(model, glm::radians(rot1), glm::vec3(0.0f, 0.0f, 1.0f));
 		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -814,14 +920,12 @@ int main()
 
 		////Ala derecha de la mariposa 2
 		//model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(posX, posY, posZ));
-		//model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		//model = glm::translate(model, glm::vec3(posXMari, posYMari, posZMari));
 		//model = glm::translate(tmp2, glm::vec3(- 0.001f, 0.0f, 0.0f));
 		//model = glm::rotate(model, glm::radians(rot2), glm::vec3(0.0f, 0.0f, -1.0f));
 		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
 		//alaDer.Draw(lightingShader);
-		//alas.Draw(lightingShader);*/
 
 		//Enviroment Draw
 		model = glm::mat4(1);
@@ -1089,10 +1193,60 @@ int main()
 		lionFloor.Draw(lightingShader);
 		lionExterior.Draw(lightingShader);
 		lionFences.Draw(lightingShader);
+		simba.Draw(lightingShader);
+		scar.Draw(lightingShader);
+
+		////Lion animation
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(posXLeones, posYLeones, posZLeones));
+		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		//tmp = model = glm::translate(model, glm::vec3(0.0f, 0.897f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//bodyLion.Draw(lightingShader);
+
+		//model = glm::translate(tmp, glm::vec3(0.0f, 0.3f, 0.0f));
+		//model = glm::scale(model, glm::vec3(1.406f, 1.406f, 1.406f));
+		//model = glm::rotate(model, glm::radians(rotCabeza), glm::vec3(0.0f, 1.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//headLion.Draw(lightingShader);
+
+		//model = glm::mat4(1);
+		//model = glm::translate(tmp, glm::vec3(0.187f, 0.054f, -0.011f));
+		//model = glm::rotate(model, glm::radians(rotBicepDer), glm::vec3(1.0f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//bicepDer.Draw(lightingShader);
+
+		//model = glm::translate(model, glm::vec3(0.046f, -0.182f, -0.068f));
+		//model = glm::rotate(model, glm::radians(rotAnteDer), glm::vec3(1.0f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//antebrazoDer.Draw(lightingShader);
+
+		//model = glm::translate(model, glm::vec3(0.026f, -0.2f, 0.048f));
+		//model = glm::rotate(model, glm::radians(rotManoDer), glm::vec3(0.0f, 1.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//manoDer.Draw(lightingShader);
+
+		//model = glm::mat4(1);
+		//model = glm::translate(tmp, glm::vec3(-0.172f, 0.054f, -0.011f));
+		//model = glm::rotate(model, glm::radians(rotBicepIzq), glm::vec3(1.0f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//bicepIzq.Draw(lightingShader);
+
+		//model = glm::translate(model, glm::vec3(-0.068f, -0.2f, -0.026f));
+		//model = glm::rotate(model, glm::radians(rotAnteIzq), glm::vec3(1.0f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//antebrazoIzq.Draw(lightingShader);
+
+		//model = glm::translate(model, glm::vec3(-0.039f, -0.193f, 0.03f));
+		//model = glm::rotate(model, glm::radians(rotManoIzq), glm::vec3(0.0f, 1.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//manoIzq.Draw(lightingShader);
 
 		//Panda habitat draw
+		//Herpetario
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXPanda, posYPanda, posZPanda));
+		model = glm::translate(model, glm::vec3(posXHerp, posYHerp, posZHerp));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		pandaFloor.Draw(lightingShader);
@@ -1103,6 +1257,14 @@ int main()
 
 		//Po herarchy
 		//Body draw
+		HerpCueva.Draw(lightingShader);
+		mushu.Draw(lightingShader);
+		randall.Draw(lightingShader);
+		troncos1Herp.Draw(lightingShader);
+		troncos2Herp.Draw(lightingShader);
+		rocaHerp.Draw(lightingShader);
+
+		//crocodile herpetary
 		model = glm::mat4(1);
 		tmpPanda = model = glm::translate(model, glm::vec3(87.785f, 1.0f, -38.276f));
 		model = glm::translate(model, glm::vec3(posXEnvi, posYEnvi, posZEnvi));
@@ -1162,6 +1324,8 @@ int main()
 		model = glm::rotate(model, glm::radians(pandaManoIzqRotX), glm::vec3(1.0f, 0.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaManoIzqRotY), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaManoIzqRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::translate(model, glm::vec3(posXHerp + 1.706, posYHerp + 1.83 + movYCoco, posZHerp - 0.968 + movCoco));
+		model = glm::rotate(model, glm::radians(rotYCoco), glm::vec3(1.0f, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		pandaManoIzq.Draw(lightingShader);
@@ -1172,6 +1336,10 @@ int main()
 		model = glm::rotate(model, glm::radians(pandaPiernaDerRotX), glm::vec3(1.0f, 0.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaPiernaDerRotY), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaPiernaDerRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
+		cuerpoCoco.Draw(lightingShader);
+
+		model = glm::translate(model, glm::vec3(0.028, -0.039, -0.87));
+		model = glm::rotate(model, glm::radians(rotColaCo), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		pandaPiernaDer.Draw(lightingShader);
@@ -1182,13 +1350,23 @@ int main()
 		model = glm::rotate(model, glm::radians(pandaPiernaIzqRotX), glm::vec3(1.0f, 0.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaPiernaIzqRotY), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(pandaPiernaIzqRotZ), glm::vec3(0.0f, 0.0f, 1.0f));
+		colaCoco.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(posXHerp + 1.706 + 0.299, posYHerp + 1.83 - 0.011 + movYCoco, posZHerp - 0.968 + movCoco - 0.089));
+		model = glm::rotate(model, glm::radians(rotYCoco), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotPatasCo), glm::vec3(1.0f, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		pandaPiernaIzq.Draw(lightingShader);
+		pataIzqCoco.Draw(lightingShader);
 
 		//Penguin habitat draw
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXPenguin, posYPenguin, posZPenguin));
+		model = glm::translate(model, glm::vec3(posXHerp + 1.706 - 0.247, posYHerp + 1.83 + 0.004 + movYCoco, posZHerp - 0.968 + movCoco - 0.067));
+		model = glm::rotate(model, glm::radians(rotYCoco), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotPatasCo), glm::vec3(1.0f, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		penguinCenter.Draw(lightingShader);
@@ -1209,6 +1387,7 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "transparencia"), 0.0);
 		penguinStreet.Draw(lightingShader);
+		pataDerCoco.Draw(lightingShader);
 
 		//Penguins Draw
 		//Cabo Herarchy
@@ -1444,6 +1623,7 @@ int main()
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0.0);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.75f);
 		Pecera.Draw(lightingShader);
+		aguaHerp.Draw(lightingShader);
 
 		//Street Lights Glass
 		model = glm::mat4(1);
@@ -1605,6 +1785,7 @@ int main()
 		lionCTree.Draw(lightingShader);
 
 		//Draw enviroment trees
+		////Load transparency models for herpetary
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(posXEnvi + 29.074, posYEnvi, posZEnvi - 5.928));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -1651,9 +1832,12 @@ int main()
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
 		enviTree.Draw(lightingShader);
 		model = glm::translate(model, glm::vec3(12.528f, 0.0f, 12.896f));
+		model = glm::translate(model, glm::vec3(posXHerp, posYHerp, posZHerp));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1.0);
 		enviTree.Draw(lightingShader);
+		planta1Herp.Draw(lightingShader);
+		planta2Herp.Draw(lightingShader);
 
 		glEnable(GL_DEPTH_TEST);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
@@ -1728,41 +1912,46 @@ int main()
 }
 
 
-//void keyframePersona() {
-//	if (play)
-//	{
-//		if (i_curr_steps >= i_max_steps) //end of animation between frames?
-//		{
-//			playIndex++;
-//			if (playIndex > FrameIndex - 2)	//end of total animation?
-//			{
-//				printf("termina anim\n");
-//				playIndex = 0;
-//				play = false;
-//			}
-//			else //Next frame interpolations
-//			{
-//				i_curr_steps = 0; //Reset counter
-//				//Interpolation
-//				interpolation();
-//			}
-//		}
-//		else
-//		{
-//			//Draw animation
-//			posX += KeyFrame[playIndex].incX;
-//			posY += KeyFrame[playIndex].incY;
-//			posZ += KeyFrame[playIndex].incZ;
-//
-//			rotBicep += KeyFrame[playIndex].rotIncBicep;
-//			rotAntebrazo += KeyFrame[playIndex].rotIncAnte;
-//
-//			rotMano += KeyFrame[playIndex].rotIncMano;
-//
-//			i_curr_steps++;
-//		}
-//	}
-//}
+void keyframeLion() {
+	if (play)
+	{
+		if (i_curr_steps >= i_max_steps) //end of animation between frames?
+		{
+			playIndex++;
+			if (playIndex > FrameIndex - 2)	//end of total animation?
+			{
+				printf("termina anim\n");
+				playIndex = 0;
+				play = false;
+			}
+			else //Next frame interpolations
+			{
+				i_curr_steps = 0; //Reset counter
+				//Interpolation
+				interpolation();
+			}
+		}
+		else
+		{
+			//Draw animation
+			posX += KeyFrame[playIndex].incX;
+			posY += KeyFrame[playIndex].incY;
+			posZ += KeyFrame[playIndex].incZ;
+
+			rotBicepDer += KeyFrame[playIndex].rotIncBicepDer;
+			rotAnteDer += KeyFrame[playIndex].rotIncAnteDer;
+			rotManoDer += KeyFrame[playIndex].rotIncManoDer;
+
+			rotBicepIzq += KeyFrame[playIndex].rotIncBicepIzq;
+			rotAnteIzq += KeyFrame[playIndex].rotIncAnteIzq;
+			rotManoIzq += KeyFrame[playIndex].rotIncManoIzq;
+
+			rotCabeza += KeyFrame[playIndex].rotIncCabeza;
+
+			i_curr_steps++;
+		}
+	}
+}
 
 void animacionMariposa() {
 	if (anim) {
@@ -1843,6 +2032,14 @@ void animacionPinguinos() {
 			if (rotXSkiperDer < 90.0f) {
 				rotXSkiperDer += 0.2f;
 				rotXKowalskiDer += 0.2f;
+void animCapibara() {
+	if (recorridoCapibara)
+	{
+		if (animPatasDel)
+		{
+			if (pataTrasera < 15) {
+				pataTrasera += 0.1;
+				pataDelantera -= 0.1;
 			}
 			if (rotZKowalskiDer < 90.0f)
 				rotZKowalskiDer += 0.2f;
@@ -1852,6 +2049,9 @@ void animacionPinguinos() {
 			if (rotPSkiper < -100.0f) {
 				route2 = false;
 				route3 = true;
+			else {
+				animPatasTras = true;
+				animPatasDel = false;
 			}
 		}
 		if (route3) {
@@ -1860,6 +2060,12 @@ void animacionPinguinos() {
 			if (rotXRicoIzq < 90.0f) {
 				rotXRicoIzq += 0.2f;
 				rotXKowalskiDer -= 0.2f;
+
+		if (animPatasTras)
+		{
+			if (pataTrasera > 0) {
+				pataTrasera -= 0.1;
+				pataDelantera += 0.1;
 			}
 			if (rotZKowalskiDer < 90.0f)
 				rotZKowalskiDer += 0.2f;
@@ -1869,6 +2075,9 @@ void animacionPinguinos() {
 			if (rotPSkiper < -280.0f) {
 				route3 = false;
 				route4 = true;
+			else {
+				animPatasTras = false;
+				animPatasDel = true;
 			}
 		}
 		if (route4) {
@@ -1876,15 +2085,42 @@ void animacionPinguinos() {
 				rotZSkiperIzq += 0.2f;
 				rotZSkiperDer -= 0.2f;
 				rotZKowalskiDer -= 0.2;
+
+		if (recorrido1) {
+			rotKit = -90.0f;
+			movXCapibara -= 0.001f;
+			if (movXCapibara < 11.0f)
+			{
+				recorrido2 = true;
+				recorrido1 = false;
 			}
 			if (rotXSkiperIzq < 90.0f) {
 				rotXSkiperIzq += 0.2f;
 				rotXKowalskiDer += 0.2f;
+		}
+
+		if (recorrido2) {
+			rotKit = -45.0f;
+			movXCapibara -= 0.001f;
+			movZCapibara -= 0.001f;
+			if (movXCapibara < 9.5F) {
+				recorrido3 = true;
+				recorrido2 = false;
 			}
 			rotPSkiper += 0.2f;
 			if (rotPSkiper > -90.0f) {
 				route4 = false;
 				route5 = true;
+		}
+
+		if (recorrido3) {
+			rotKit = -90.0f;
+			rotKitZ = -22.0f;
+			movXCapibara -= 0.001f;
+			movYCapibara += 0.404f * 0.001f;
+			if (movXCapibara < 5.5f) {
+				recorrido3 = false;
+				recorrido4 = true;
 			}
 		}
 		if (route5) {
@@ -1894,6 +2130,12 @@ void animacionPinguinos() {
 				rotXKowalskiDer -= 0.2f;
 				rotXRicoIzq -= 0.2f;
 
+		if (recorrido4) {
+			rotKitZ = 0.0f;
+			movXCapibara -= 0.001f;
+			if (movXCapibara < 3.0f) {
+				recorrido4 = false;
+				recorrido5 = true;
 			}
 			if (rotZSkiperDer < 90.0f)
 				rotZSkiperDer += 0.2f;
@@ -1906,11 +2148,28 @@ void animacionPinguinos() {
 				rotYKowalskiDer += 0.2f;
 				rotYSkiperDer += 0.2f;
 				rotYSkiperIzq -= 0.2f;
+		}
+
+		if (recorrido5) {
+			rotKit = 90.0f;
+			movXCapibara += 0.001f;
+			if (movXCapibara > 5.5f) {
+				recorrido5 = false;
+				recorrido6 = true;
 			}
 			rotPSkiper += 0.2f;
 			if (rotPSkiper > 90.0f) {
 				route5 = false;
 				route6 = true;
+		}
+
+		if (recorrido6) {
+			rotKitZ = 22.0f;
+			movXCapibara += 0.001f;
+			movYCapibara -= 0.404f * 0.001f;
+			if (movXCapibara > 9.5f) {
+				recorrido6 = false;
+				recorrido7 = true;
 			}
 		}
 		if (route6) {
@@ -1925,11 +2184,29 @@ void animacionPinguinos() {
 					rotYSkiperDer -= 0.2f;
 					rotYSkiperIzq += 0.2f;
 				}
+
+		if (recorrido7) {
+			rotKitZ = 0.0f;
+			rotKit = 135.0f;
+			movXCapibara += 0.001f;
+			movZCapibara += 0.001f;
+			if (movXCapibara > 11.0F) {
+				recorrido8 = true;
+				recorrido7 = false;
 			}
 			if (rotZSkiperDer < 0.0) {
 				route6 = false;
 				route1 = true;
 				animPenguin = false;
+		}
+
+		if (recorrido8) {
+			rotKit = 90.0f;
+			movXCapibara += 0.001f;
+			if (movXCapibara > 13.5f)
+			{
+				recorrido1 = true;
+				recorrido8 = false;
 			}
 		}
 	}
@@ -1962,6 +2239,12 @@ void animacionPanda() {
 			if (pandaBicepDerRotY > 100.0f) {
 				part2 = false;
 				part3 = true;
+void animCocodrilo() {
+	if (recorridoCoco) {
+
+		if (rotPatas1) {
+			if (rotPatasCo < 20) {
+				rotPatasCo += 0.1;
 			}
 		}
 		if (part3) {
@@ -1973,6 +2256,9 @@ void animacionPanda() {
 			if (pandaBicepDerRotY < 0.0f) {
 				part3 = false;
 				part4 = true;
+			else {
+				rotPatas1 = false;
+				rotPatas2 = true;
 			}
 		}
 		if (part4) {
@@ -1988,6 +2274,10 @@ void animacionPanda() {
 			if (pandaBicepIzqRotY < -100.0f) {
 				part4 = false;
 				part5 = true;
+
+		if (rotPatas2) {
+			if (rotPatasCo > 0) {
+				rotPatasCo -= 0.1;
 			}
 		}
 		if (part5) {
@@ -1999,6 +2289,9 @@ void animacionPanda() {
 			if (pandaBicepIzqRotY > 0.0) {
 				part5 = false;
 				part6 = true;
+			else {
+				rotPatas1 = true;
+				rotPatas2 = false;
 			}
 		}
 		if (part6) {
@@ -2009,12 +2302,19 @@ void animacionPanda() {
 			if (pandaBicepDerRotZ > -5.0f) {
 				pandaBicepIzqRotZ -= 0.09f;
 				pandaBicepDerRotZ -= 0.09f;
+
+		if (rotCola1) {
+			if (rotColaCo < 20) {
+				rotColaCo += 0.1;
 			}
 			pandaAntebrazoDerRotY += 0.09f;
 			pandaAntebrazoIzqRotY -= 0.09f;
 			if (pandaAntebrazoDerRotY > 90.0f) {
 				part6 = false;
 				part7 = true;
+			else {
+				rotCola1 = false;
+				rotCola2 = true;
 			}
 		}
 		if (part7) {
@@ -2029,6 +2329,10 @@ void animacionPanda() {
 			if (pandaBicepDerRotX < -90.0f) {
 				part7 = false;
 				part8 = true;
+
+		if (rotCola2) {
+			if (rotColaCo > -20) {
+				rotColaCo -= 0.1;
 			}
 		}
 		if (part8) {
@@ -2053,6 +2357,9 @@ void animacionPanda() {
 			if (pandaBicepDerRotX > 0.0f) {
 				part8 = false;
 				part9 = true;
+			else {
+				rotCola1 = true;
+				rotCola2 = false;
 			}
 		}
 		if (part9) {
@@ -2067,31 +2374,38 @@ void animacionPanda() {
 				part1 = true;
 				animPanda = false;
 			}
+
+		rotYCoco = -20;
+		movYCoco += 0.3639 * 0.001;
+		movCoco += 0.001;
+		if (movCoco > 1.5) {
+			recorridoCoco = false;
 		}
 	}
 }
+
 // Is called whenever a key is pressed/released via GLFW
-void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode)
+void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode)
 {
-	//if (keys[GLFW_KEY_L])
-	//{
-	//	if (play == false && FrameIndex > 1)
-	//	{
+	if (keys[GLFW_KEY_L])
+	{
+		if (play == false && FrameIndex > 1)
+		{
 
-	//		resetElements();
-	//		//First Interpolation				
-	//		interpolation();
+			resetElements();
+			//First Interpolation				
+			interpolation();
 
-	//		play = true;
-	//		playIndex = 0;
-	//		i_curr_steps = 0;
-	//	}
-	//	else
-	//	{
-	//		play = false;
-	//	}
+			play = true;
+			playIndex = 0;
+			i_curr_steps = 0;
+		}
+		else
+		{
+			play = false;
+		}
 
-	//}
+	}
 
 
 	if (GLFW_KEY_ESCAPE == key && GLFW_PRESS == action)
@@ -2129,12 +2443,24 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 
 	if (keys[GLFW_KEY_P])
 		animPenguin = !animPenguin;
+	if (keys[GLFW_KEY_C])
+	{
+		recorridoCapibara = true;
+		animPatasDel = !animPatasDel;
+	}
+
+	if (keys[GLFW_KEY_B])
+	{
+		recorridoCoco = !recorridoCoco;
+		rotPatas1 = !rotPatas1;
+		rotCola1 = !rotCola1;
+	}
 
 	if (keys[GLFW_KEY_O])
 		animPanda = !animPanda;
 }
 
-void MouseCallback(GLFWwindow *window, double xPos, double yPos)
+void MouseCallback(GLFWwindow* window, double xPos, double yPos)
 {
 
 	if (firstMouse)
@@ -2158,7 +2484,7 @@ void DoMovement()
 {
 	if (keys[GLFW_KEY_1])
 	{
-		
+
 		movCamera = 0.01f;//Manda una velocidad de 0.01 a la camara automatica
 
 	}
