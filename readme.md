@@ -13,6 +13,5 @@ En nuestro recorrido virtual, los usuarios podrán explorar cada uno de los seis
 Con nuestro recorrido virtual del Zoo Of Fame, esperamos brindar una experiencia única y emocionante que permita a los usuarios disfrutar de la emoción y la interacción de un zoológico desde la comodidad de su hogar.
 
 # Acerca de nosotros
-* Álvarez Solís Sergio Iván
 * Dávila Ortega Jesús Eduardo
 * Lugo Sáenz Jesús
